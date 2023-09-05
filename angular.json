@@ -5,7 +5,17 @@
   "projects": {
     "rentalmaster": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -96,6 +106,6 @@
     }
   },
   "cli": {
-    "analytics": "c78be283-a4df-45b2-9863-5bc38b48d5f8"
+    "analytics": "34e28564-4451-49e8-ba89-bb7f11b13c86"
   }
 }
