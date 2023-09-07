@@ -1,0 +1,42 @@
+<!-- <p>nav works!</p> -->
+<!-- <div>
+    <a routerLink="home">Home</a> &nbsp;
+    <a routerLink="about">About</a>
+</div> -->
+<!-- Main navigation container -->
+
+<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gray-800 mb-3">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+        <!-- <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
+          pink Color
+        </a> -->
+        <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto text-yellow-400" src="../../assets/images/rentalmaster.png" width="80" height="80" alt="Your Company">
+        </div>
+        <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+        <ul class="flex flex-col lg:flex-row list-none ml-auto">
+          <li class="nav-item">
+            <a routerLink="home" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <i class="fa fa-home text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Home</span>
+              <!-- <i class="fa fa-house"></i> -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="about" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <i class="fa fa-info-circle text-lg leading-lg text-white opacity-75"></i><span class="ml-2">About</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Pin</span>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
