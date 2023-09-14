@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RentalProperty } from '../models/rental-property';
 import { RentalService } from '../services/rental.service';
 import { Observable } from 'rxjs';
@@ -18,14 +18,20 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule, 
     MatButtonModule, 
     MatSelectModule,
-    MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule
+    MatFormFieldModule, 
+    NgIf, 
+    NgFor, 
+    MatInputModule, 
+    FormsModule
   ],
   templateUrl: './rental-app.component.html',
   styleUrls: ['./rental-app.component.css']
 })
 export class RentalAppComponent {
 
-  // selectedProperty: RentalProperty = [];
+  selectedProperty: any = {};
+  show = false;
+  selectedPropertyId: number;
   
   properties: RentalProperty[] = []; //properties$: Observable<RentalProperty>[] = [];
   
@@ -40,9 +46,17 @@ export class RentalAppComponent {
     }); 
   }
 
-  onSelectProperty(property: RentalProperty): void {
-    // this.selectedProperty = property;
-    console.log('selected property', property)
+  onSelectProperty(propertyId): void {
+    
+    console.log('selected property id', propertyId)
+    this.selectedPropertyId = propertyId;
+    this.selectedProperty = this.properties.find(property => property.id === propertyId);
+    if(this.selectedProperty) {
+      this.show = true;
+    }
+    // console.log(this.selectedProperty)
   }
+
+
 
 }

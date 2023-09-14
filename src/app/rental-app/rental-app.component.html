@@ -1,51 +1,38 @@
-<!-- <p>rental-app works!</p> 
-<div class="text-center">
-    <label for="rental-property" class="block text-blue-700 font-bold text-xl">Choose a rental property to apply:</label> 
-</div>
-<div class="mx-auto">
-    <select name="rental-property" id="rental-propertys" class="w-full"> 
-        <option value="rigatoni">Rigatoni</option> 
-        <option value="dave">Dave</option> 
-        <option value="pumpernickel">Pumpernickel</option> 
-        <option value="reeses">Reeses</option> 
-    </select>
-</div>
--->
-<!-- <button mat-raised-button color="primary"><span class="text-red-500">Primary</span></button>
-<button mat-fab color="accent" class="text-red-700 bg-yellow-400 p-2 rounded-full ml-3" aria-label="Example icon button with a delete icon">
-    <mat-icon class="text-red-700">delete</mat-icon>
-  </button> -->
+<!-- <p>rental-app works!</p>--> 
+
 <div class="container w-2/3 mx-auto">
     <div class="text-center">
         <mat-icon class="text-orange-700">line_weight</mat-icon>
-        <label for="countries" class="block mb-2 text-xl sm:text-sm font-semi-bold text-gray-900 dark:text-white font-medium uppercase">Welcome to rental-apply.com</label>
-    </div>
-
-    <!-- <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full">
-        <option selected class="font-bold">Choose a rental property</option>
-        <option value="US">United States</option>
-        <option value="CA">Canada</option>
-        <option value="FR">France</option>
-        <option value="DE">Germany</option>
-    </select> -->
-    <!-- <mat-form-field class="w-2/3 sm:w-full">
-        <mat-label>Cars</mat-label>
-        <mat-select matNativeControl required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full">
-          <mat-option value="volvo">Volvo</mat-option>
-          <mat-option value="saab">Saab</mat-option>
-          <mat-option value="mercedes">Mercedes</mat-option>
-          <mat-option value="audi">Audi</mat-option>
-        </mat-select>
-    </mat-form-field> -->
+        <label for="countries" class="block text-xl sm:text-sm font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Welcome to rental-apply.com</label>
+    </div>    
     <mat-form-field class="w-full">
         <mat-label>Choose rental property</mat-label>
         <mat-select #selectProperty (selectionChange)="onSelectProperty(selectProperty.value)">
-          <mat-option *ngFor="let property of properties" [value]="property.title">
+          <mat-option *ngFor="let property of properties" [value]="property.id">
             {{property.title}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
-</div>  
+    </mat-form-field>
+    <div class="flex flex-row">
+        <div class=" w-1/4">
+            <img src={{selectedProperty.image}} title="{{selectedProperty.title}}" width="100%" />
+        </div>
+        <div class="ml-4 w-3/4" *ngIf="show">
+            <div class="p-1 pt-0">
+                <h2 class="text-gray-700 text-md font-semi-bold pb-1">Property Details</h2>
+                <div class="text-gray-600 text-md -mt-4">{{selectedProperty.title}} ({{selectedProperty.bedrooms}} bedroom {{selectedProperty.type}})
+                    <div class="mt-2">{{selectedProperty.description}}</div>
+                    <div class="mt-2">
+                        {{selectedProperty.street}} {{selectedProperty.city}}
+                    </div>
+                    <p>{{selectedProperty.bedrooms}} bedrooms, {{selectedProperty.bathrooms}} bathrooms</p>
+                    <p><span class="text-gray-700 font-bold">Contact</span>: xxx-xxx-xxxx, rentinfo@rental-app.com</p>
+                    
+                </div> 
+            </div>            
+        </div>        
+    </div>
+</div> 
 
 
 >

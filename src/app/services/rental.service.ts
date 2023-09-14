@@ -13,4 +13,8 @@ export class RentalService {
   getRentalProperties(): Observable<RentalProperty[]> {
     return this.http.get<RentalProperty[]>('../../assets/properties.json');
   }
+
+  getRentalProperty(id: number): Observable<RentalProperty> {
+    return this.http.get<RentalProperty>('../../assets/properties.json');
+  }
 }

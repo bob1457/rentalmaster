@@ -9,12 +9,6 @@ import { importProvidersFrom } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-// export const routes : Routes = [
-//   { path: '**', redirectTo: 'home', pathMatch: 'full' },
-//   { path: 'home', component: HomeComponent},
-//   { path: 'about', component: AboutComponent},
-// ];
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
