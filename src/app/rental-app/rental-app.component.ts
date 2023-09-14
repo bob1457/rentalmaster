@@ -31,6 +31,7 @@ export class RentalAppComponent {
 
   selectedProperty: any = {};
   show = false;
+  showApply = false;
   selectedPropertyId: number;
   
   properties: RentalProperty[] = []; //properties$: Observable<RentalProperty>[] = [];
@@ -43,7 +44,7 @@ export class RentalAppComponent {
     this.rentalService.getRentalProperties().subscribe((data) => {
       this.properties = data
       console.log('rental property list', this.properties)
-    }); 
+    }); true
   }
 
   onSelectProperty(propertyId): void {
@@ -53,6 +54,7 @@ export class RentalAppComponent {
     this.selectedProperty = this.properties.find(property => property.id === propertyId);
     if(this.selectedProperty) {
       this.show = true;
+      this.showApply = true;
     }
     // console.log(this.selectedProperty)
   }

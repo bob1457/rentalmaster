@@ -1,9 +1,9 @@
 <!-- <p>rental-app works!</p>--> 
 
-<div class="container w-2/3 mx-auto">
+<section class="container w-2/3 mx-auto">
     <div class="text-center">
         <mat-icon class="text-orange-700">line_weight</mat-icon>
-        <label for="countries" class="block text-xl sm:text-sm font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Welcome to rental-apply.com</label>
+        <label for="countries" class="block text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Welcome to rental-apply.com</label>
     </div>    
     <mat-form-field class="w-full">
         <mat-label>Choose rental property</mat-label>
@@ -26,13 +26,18 @@
                         {{selectedProperty.street}} {{selectedProperty.city}}
                     </div>
                     <p>{{selectedProperty.bedrooms}} bedrooms, {{selectedProperty.bathrooms}} bathrooms</p>
-                    <p><span class="text-gray-700 font-bold">Contact</span>: xxx-xxx-xxxx, rentinfo@rental-app.com</p>
-                    
+                    <p><span class="text-gray-700 font-bold">Contact</span>: xxx-xxx-xxxx, rentinfo@rental-apply.com</p>                    
                 </div> 
-            </div>            
+            </div> 
+            <!-- <button mat-raised-button color="primary">Interested? Apply<mat-icon>get_app</mat-icon></button>            -->
         </div>        
     </div>
-</div> 
+    <button *ngIf="showApply" mat-raised-button color="primary">Interested? APPLY<mat-icon>get_app</mat-icon></button>           
+
+    <div>
+        application form
+    </div>
+</section>
 
 
->
+
