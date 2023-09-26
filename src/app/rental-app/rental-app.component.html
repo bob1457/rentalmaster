@@ -3,7 +3,7 @@
 <section class="container w-2/3 mx-auto">
     <div class="text-center">
         <mat-icon class="text-orange-700">line_weight</mat-icon>
-        <label for="countries" class="block text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Welcome to rental-apply.com</label>
+        <label for="countries" class="block text-lg sm:text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Welcome to rental-apply.com</label>
     </div>    
     <mat-form-field class="w-full">
         <mat-label>Choose rental property</mat-label>
@@ -15,11 +15,11 @@
     </mat-form-field>
     <div class="flex flex-row">
         <div class=" w-1/4">
-            <img src={{selectedProperty.image}} title="{{selectedProperty.title}}" width="100%" />
+            <img src={{selectedProperty.image}} title="{{selectedProperty.title}}" width="100%" alt="{{selectedProperty.title}}"/>
         </div>
         <div class="ml-4 w-3/4" *ngIf="show">
             <div class="p-1 pt-0">
-                <h2 class="text-gray-700 text-md font-semi-bold pb-1">Property Details</h2>
+                <h2 class="text-gray-700 font-semi-bold pb-1"><span class="text-sm sm:text-lg">Property Details</span></h2>
                 <div class="text-gray-600 text-md -mt-4">{{selectedProperty.title}} ({{selectedProperty.bedrooms}} bedroom {{selectedProperty.type}})
                     <div class="mt-2">{{selectedProperty.description}}</div>
                     <div class="mt-2">
@@ -32,10 +32,232 @@
             <!-- <button mat-raised-button color="primary">Interested? Apply<mat-icon>get_app</mat-icon></button>            -->
         </div>        
     </div>
-    <button *ngIf="showApply" mat-raised-button color="primary">Interested? APPLY<mat-icon>get_app</mat-icon></button>           
+    <div class="text-center sm:text-left mt-4 mb-8">
+        <button *ngIf="showApply" mat-raised-button color="primary" (click)="showForm()">Interested? <span class="font-bold text-orange-400">APPLY</span><mat-icon>get_app</mat-icon></button>           
+    </div>
 
-    <div>
-        application form
+    <div *ngIf="showApplyForm">
+        <h3 class="text-center text-xl font-bold" ><span class="text-xl">Rental Application Form</span></h3>
+        <p class="italic">Please fill out the following form, fields with <span class="text-red-600 font-bold text-lg">*</span> is required!</p>
+        <form class="w-full" [formGroup]="applyForm" (ngSubmit)="submitForm()" novalidate>
+            <!-- <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput placeholder="First Name" formControlName="FirstName">
+            </mat-form-field> --> 
+            <div class="flex flex-row w-full">
+                <mat-form-field appearance="fill" class="w-1/2 mr-4">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Fist Name">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="w-1/2">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->                    
+                </mat-form-field>                  
+            </div>
+            <div class="flex flex-row w-full">
+                <mat-form-field appearance="fill" class="w-1/2 mr-4">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Email">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="w-1/2">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Telephone</mat-label>
+                    <input matInput placeholder="Telephone">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                  </mat-form-field>
+            </div>
+            <div class="w-full">
+                <mat-form-field appearance="fill" class="w-full">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Current Address</mat-label>
+                    <input matInput placeholder="Number, street, city, province and post code">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                  </mat-form-field>
+            </div>
+            <div class="flex flex-row w-full">  
+                <mat-form-field class="w-2/3 sm:w-1/2">
+                    <mat-label>No. of occupants</mat-label>
+                    <mat-select #selectOccupants (selectionChange)="onSelectOccupants(selectOccupants.value)">
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value ="3">3</mat-option>
+                        <mat-option value ="4">4</mat-option>
+                        <mat-option value ="5">5</mat-option>                    
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="w-1/3 sm:w-1/4 ml-2">                    
+                    <mat-checkbox (change)="onSmoking($event)" class="pr-0"><span class="-ml-2">Smoking?</span></mat-checkbox>                    
+                </div>  -->
+                <div class="w-1/3 sm:w-1/2 ml-2 pr-0">                    
+                    <mat-checkbox (change)="onPets($event)"><span class="-ml-2">Pets?</span></mat-checkbox>                   
+                </div>           
+                
+            </div>
+            <p *ngIf="moreOccupant > 1">
+                <button type="button" mat-raised-button color="primary" (click)="addOccupantFormGroup()">Add occupant<mat-icon>person_add</mat-icon></button>           
+            </p>
+            <!-- Form array for occupants -->
+            <div formArrayName="occupants" id="occupants">
+                <div *ngFor="let occupant of occupants().controls; let occupantIndex = index" >
+                    <div [formGroupName]="occupantIndex" class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 relative">
+                        <mat-icon><span class="text-red-700 text-md absolute right-2 top-0 cursor-pointer" (click)="removeOccupantFormGroup(occupantIndex)">cancel</span></mat-icon>                       
+                        <div class="flex flex-row w-full flex-wrap -mt-8"> 
+                            <mat-form-field appearance="fill" class="w-1/2 sm:w-1/3 mr-2">
+                                <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                                <mat-label>Full Name</mat-label>
+                                <input matInput placeholder="Full Name">
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                
+                            </mat-form-field>
+                            <mat-form-field class="w-1/2 sm:w-1/3">
+                                <mat-label>Relation</mat-label>
+                                <mat-select #selectRelations (selectionChange)="onSelectRelation(selectRelations.value)">
+                                    <mat-option value="Spouse">Spouse</mat-option>
+                                    <mat-option value="Child">Child</mat-option>
+                                    <mat-option value ="Other">Other</mat-option>                                               
+                                </mat-select>
+                            </mat-form-field>
+                            
+                            <div class="w-1/3 sm:w-1/4" *ngIf="child">
+                                <!-- <mat-hint class="text-red-600 text-lg">*</mat-hint> -->
+                                <mat-checkbox  (change)="onChild($event)">Minor</mat-checkbox>
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="flex flex-row w-full">                
+                <mat-form-field class="w-1/2 mr-4 mt-4 ">
+                    <mat-label>Employment Status</mat-label>
+                    <mat-select #selectEmployment (selectionChange)="onSelectEmployment(selectEmployment.value)">
+                        <mat-option value="Employed">Employed</mat-option>
+                        <mat-option value="Self-employed">Self-employed</mat-option>
+                        <mat-option value ="Student">Student</mat-option>
+                        <mat-option value ="Unemployed">Unemployed</mat-option>                                                
+                    </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="w-1/2" *ngIf="employed">
+                    <!-- <mat-hint class="text-red-600 text-lg">*</mat-hint> -->
+                    <mat-label>Employer/Company Name</mat-label>
+                    <input matInput placeholder="Employer/Company Name">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                  </mat-form-field>
+            </div>
+            <div class="flex flex-row w-full" *ngIf="employed">                
+                <mat-form-field class="w-1/2 mr-4 ">
+                    <mat-label>Job Title</mat-label>
+                    <input matInput placeholder="Employer Name">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="w-1/2">
+                    <!-- <mat-hint class="text-red-600 text-lg">*</mat-hint> -->
+                    <mat-label>Length of Work</mat-label>
+                    <input matInput placeholder="In Years">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                  </mat-form-field>
+            </div>
+            <div class="flex flex-row w-full">                
+                <mat-form-field class="w-1/2 mr-4 ">
+                    <!-- <mat-hint class="text-red-600 text-lg">*</mat-hint> -->
+                    <mat-label>Salary</mat-label>
+                    <input matInput placeholder="Annual Salary">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="w-1/2">                    
+                    <mat-label>Other Income</mat-label>
+                    <input matInput placeholder="Other Income">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    
+                  </mat-form-field>
+            </div>
+            <p>
+                <button type="button" mat-raised-button color="primary" (click)="addReferenceFormGroup()">Add Reference<mat-icon>add_box</mat-icon></button>           
+            </p>
+            <!-- Form group for reference -->
+            <div formArrayName="references" id="references">
+                <div *ngFor="let reference of references().controls; let referenceIndex = index" >
+                    <div class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 relative">
+                        <mat-icon><span class="text-red-700 text-md absolute right-2 top-0 cursor-pointer" (click)="removeReferenceFormGroup(referenceIndex)">cancel</span></mat-icon>
+                        <div [formGroupName]="referenceIndex" class="flex flex-row w-full">
+                            <mat-form-field appearance="fill" class="w-1/2 mr-4">
+                                <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                                <mat-label>Full Name</mat-label>
+                                <input matInput placeholder="Full Name">
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                
+                            </mat-form-field>
+                            <mat-form-field class="w-1/2 ">
+                                <mat-label>relations</mat-label>
+                                <mat-select #selectOccupants (selectionChange)="onSelectOccupants(selectOccupants.value)">
+                                    <mat-option value="Employer">Employer</mat-option>
+                                    <mat-option value="Landlord">Landlord</mat-option>
+                                    <mat-option value ="Other">Other</mat-option>                                                                          
+                                </mat-select>
+                            </mat-form-field>                        
+                        </div>
+                        <div class="flex flex-row w-full">
+                            <mat-form-field appearance="fill" class="w-1/2 mr-4">
+                                <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                                <mat-label>Telephone</mat-label>
+                                <input matInput placeholder="Telephone">
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                
+                            </mat-form-field>                
+                            <mat-form-field appearance="fill" class="w-1/2">
+                                <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="Email">
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                
+                            </mat-form-field>
+                            
+                            <!-- <div class="w-1/3 mr-4">
+                                                
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-row w-full">
+                <mat-form-field class="w-1/2 mr-4 ">
+                    <mat-label>Reason to move</mat-label>
+                    <input matInput placeholder="Employer Name">
+                </mat-form-field>
+                <mat-form-field class="w-1/2">
+                    <mat-label>Additional Information</mat-label>
+                    <textarea matInput
+                              cdkTextareaAutosize
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="1"
+                              cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+            </div> 
+            <p class="text-center text-gray-600">By clicking submit, you agree to our <a href="#" class="text-blue-600">Terms and Conditions</a></p>            
+            <div class="flex flex-row w-full justify-end mb-4">
+                <button type="submit" mat-raised-button color="primary" class="mr-2"><span class="text-yellow-500 uppercase">submit</span><mat-icon>check_circle_outline</mat-icon></button>
+                <button type="button" mat-raised-button color="accent" (click)="resetForm()"><span class="text-white uppercase">Reset</span><mat-icon>cancel</mat-icon></button>
+            </div>
+            
+            
+                
+            
+        </form>
     </div>
 </section>
 
