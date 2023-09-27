@@ -10,6 +10,8 @@ import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Va
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-rental-app',
@@ -26,7 +28,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     FormsModule,    
     MatInputModule, 
-    MatCheckboxModule,    
+    MatCheckboxModule, 
+    MatSnackBarModule,  
+    MatMenuModule, 
     MatIconModule
   ],
   templateUrl: './rental-app.component.html',
@@ -35,6 +39,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 export class RentalAppComponent {
 
   applyForm: FormGroup;
+
+  loading = false;
 
   selectedProperty: any = {};
   show = false;
@@ -47,14 +53,14 @@ export class RentalAppComponent {
   showRef = false;
   employed = false;
   child = false;
- 
   
   properties: RentalProperty[] = []; //properties$: Observable<RentalProperty>[] = [];
   
   private isVisible: boolean = false;
 
   constructor(private rentalService: RentalService,
-              private fb: FormBuilder) { 
+              private fb: FormBuilder,
+              private _snackBar: MatSnackBar) { 
       
       // this.applyForm = this.fb.group({
       //   'FirstName' : [null, Validators.required], 
@@ -83,25 +89,23 @@ export class RentalAppComponent {
       occupants: this.fb.array([]),
       references: this.fb.array([]),
 
-      'FirstName' : [null, Validators.required], 
-      'LastName' : [null, Validators.required], 
-      'Email' : [null, Validators.required],
-      'Telephone' : [null, Validators.required],  
-      'Occupants' : [1, Validators.required], 
-      'CurrentAddress' : [null],
-      'pets' : [false],
-      'EmploymentStatus' : [null, Validators.required],
-      'Employer' : [null],
-      'Occupation' : [null],
-      'AnnualIncome' : [null],
-      'OtherIncome' : [null],
-      
-      
+      FirstName : [null, Validators.required], 
+      LastName : [null, Validators.required], 
+      Email : [null, Validators.required],
+      Telephone : [null, Validators.required],  
+      Occupants : [1, Validators.required], 
+      CurrentAddress : [null],
+      pets : [false],
+      EmploymentStatus : [null, Validators.required],
+      Employer : [null],
+      Occupation : [null],
+      LengthOfEmployment : [null],
+      AnnualIncome : [null],
+      OtherIncome : [null],
+      ReasonToMove: [null],
+      AdditionalInfo: [null],      
 
     });
-    
-    
-
 
     this.rentalService.getRentalProperties().subscribe((data) => {
       this.properties = data
@@ -117,9 +121,9 @@ export class RentalAppComponent {
 
   newOccupant(): FormGroup {
     return this.fb.group({
-      'FullName' : [null, Validators.required], 
-      'Relation' : [null, Validators.required],
-      'Minor' : [false],
+      FullName : [null, Validators.required], 
+      Relation : [null, Validators.required],
+      Minor : [false],
     })
   }
 
@@ -138,10 +142,10 @@ export class RentalAppComponent {
 
   newReference(): FormGroup {
     return this.fb.group({
-      'FullName' : [null, Validators.required], 
-      'Relation' : [null, Validators.required],
-      'Telephone' : [null, Validators.required],
-      'Email' : [null, Validators.required],
+      FullName : [null, Validators.required], 
+      Relation : [null, Validators.required],
+      Telephone : [null, Validators.required],
+      Email : [null, Validators.required],
     })
   }
 
@@ -152,12 +156,6 @@ export class RentalAppComponent {
   removeReferenceFormGroup(index:number) {
     this.references().removeAt(index);
   }
-
-
-
-
-
-
 
   onSelectProperty(propertyId): void {
     
@@ -218,13 +216,27 @@ export class RentalAppComponent {
 
 
   submitForm() {
-    console.log('form submitted')
+    this.loading = true;
+    // console.log('form submit', this.applyForm.value)
+    // console.log('form submitted')
+
+    // this.openSnackBar('Application submitted successfully!', 'Close'); // local test
+    
+    this.rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
+      console.log('application submitted', data)
+      this.loading = false;
+      this.openSnackBar('Application submitted successfully!', 'Close');
+      this.resetForm();
+    });
   }
 
-  resetForm() {   
+  resetForm() {
     this.applyForm.reset();
   }
 
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
 
 }
