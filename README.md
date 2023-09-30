@@ -53,3 +53,18 @@ npm run swa:login
 ```bash
 npm run swa:deploy
 ```
+### Local Test
+
+1. Build api under project root/api
+```bash
+npm run prestart
+```
+2. Build client(Angular) under project root
+```bash
+npm run build --prod
+```
+3. Start client and api with swa cli under project root
+```bash
+swa start dist/rentalmaster --api-location api
+```
+
