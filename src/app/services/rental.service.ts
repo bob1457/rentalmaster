@@ -8,8 +8,8 @@ import { RentalProperty } from '../models/rental-property';
 })
 export class RentalService {
   
-  API_URL = '../../assets/properties.json'
-  // API_URL = 'http://localhost:7071/api/httpApi';
+  // API_URL = '../../assets/properties.json'
+  API_URL = 'http://localhost:7071/api/httpApi';
 
   constructor(private http: HttpClient) { }
 
