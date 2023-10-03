@@ -63,7 +63,7 @@ export async function httpApi(request: HttpRequest, context: InvocationContext):
     return { jsonBody: properties };
 };
 
-app.http('httpApi', {
+app.http('all', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
     handler: httpApi
