@@ -64,7 +64,7 @@ export async function httpApi(request: HttpRequest, context: InvocationContext):
 };
 
 app.http('all', {
-    methods: ['GET', 'POST'],
+    methods: ['GET'],
     authLevel: 'anonymous',
     handler: httpApi
 });
