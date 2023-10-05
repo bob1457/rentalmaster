@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rental-app',
@@ -38,6 +40,8 @@ import {MatMenuModule} from '@angular/material/menu';
 })
 export class RentalAppComponent {
 
+  env = environment.production;
+
   applyForm: FormGroup;
 
   loading = false;
@@ -62,28 +66,11 @@ export class RentalAppComponent {
 
   constructor(//private rentalService: RentalService,
               private fb: FormBuilder,
-              private _snackBar: MatSnackBar) {       
-      // this.applyForm = this.fb.group({
-      //   'FirstName' : [null, Validators.required], 
-      //   'LastName' : [null, Validators.required], 
-      //   'Email' : [null, Validators.required],
-      //   'Telephone' : [null, Validators.required],  
-      //   'Occupants' : [1, Validators.required], 
-      //   'CurrentAddress' : [null],
-      //   'pets' : [false],
-      //   'EmploymentStatus' : [null, Validators.required],
-      //   'Employer' : [null],
-      //   'Occupation' : [null],
-      //   'AnnualIncome' : [null],
-      //   'OtherIncome' : [null],
-        
-        
+              private router: Router,
+              private _snackBar: MatSnackBar) {}
 
-      // });
-
-  }
-
-  ngOnInit() {    
+  ngOnInit() {  
+    console.log('env', this.env);  
 
     this.applyForm = this.fb.group({
 
@@ -243,13 +230,15 @@ export class RentalAppComponent {
     // console.log('form submitted')
 
     // this.openSnackBar('Application submitted successfully!', 'Close'); // local test
-    
-    // this.rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
-    //   console.log('application submitted', data)
-    //   this.loading = false;
-    //   this.openSnackBar('Application submitted successfully!', 'Close');
-    //   this.resetForm();
-    // });
+    debugger;
+    this.#rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
+      console.log('application submitted', data)
+      this.loading = false;
+      this.openSnackBar('Application submitted successfully!', 'Close');
+      this.resetForm();
+      // this.router.navigate(['/']);
+      this.showApplyForm = false;
+    });
   }
 
   resetForm() {

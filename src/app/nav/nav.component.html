@@ -13,6 +13,7 @@
         </a> -->
         <div class="flex flex-shrink-0 items-center">
             <img class="h-8 w-auto text-yellow-400" src="../../assets/images/rentalmaster.png" width="80" height="80" alt="Your Company">
+            <span *ngIf="!env" class="ml-2 text-pink-400">Beta 0.1</span><span *ngIf="env" class="ml-2 text-green-400">V 1.0</span>
         </div>
         <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
           <i class="fa fa-bars"></i>

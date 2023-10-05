@@ -6,6 +6,7 @@ export interface RentalProperty {
     type: string;
     image: string,
     bedrooms: number,
+    bathrooms: number,
     description: string,
     monthlyRent: number,
     shared: false,

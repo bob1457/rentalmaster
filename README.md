@@ -67,4 +67,14 @@ npm run build --prod
 ```bash
 swa start dist/rentalmaster --api-location api
 ```
+### Local Debugging
 
+Start client and function api separately
+```
+ng serve
+```
+and then under api folder
+
+```
+func start
+```

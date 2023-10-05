@@ -1,0 +1,8 @@
+POST http://localhost:7071/api/apply
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "password123"
+}
