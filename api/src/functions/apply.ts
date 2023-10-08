@@ -1,37 +1,23 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
 
-// const { CommunicationServiceManagementClient } = require("@azure/arm-communication");
-// const { DefaultAzureCredential } = require("@azure/identity");
 
 require("dotenv").config();
 
 const { EmailClient, KnownEmailSendStatus, DefaultAzureCredentialOptions,ExcludeSharedTokenCacheCredential } = require("@azure/communication-email");
 
-const connectionString = process.env.EmailConnectionSettings;// "endpoint=https://applyemail.canada.communication.azure.com/;accesskey=M3hF7B2GKNkPBfF6BXIL58LKykYIk5WGkLfzbM1ntnI5HDavvg7DRiQIOWJSoGmB+EcxA1NRHXXDxpSk4B0flw==";
-const senderAddress = process.env.SenderAddress;//"DoNotReply<DoNotReply@0f77ab63-3dd3-4685-89ea-cb49cf8db2bd.azurecomm.net>"
+const connectionString = process.env.EmailConnectionSettings;
+const senderAddress = process.env.SenderAddress;
 const recipientAddress = "bob.h.yuan@gmail.com"
 
 
 
 export async function apply(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-        
-    // const subscriptionId = "8d8bd4e2-2c8e-4915-85a9-c06631830f85";
-    // context.log('connectionString',connectionString);
-
-    // const client = new CommunicationServiceManagementClient(credential, subscriptionId);
+    
     const emailClient = new EmailClient(connectionString);
 
     context.log(`Http function processed request for url "${request.url}"`);
 
     const POLLER_WAIT_TIME = 10
-
-    // const parameters = {
-    //     dataLocation: "Canada",
-    //     location: "Global",
-    //     linkedDomains: [
-    //         "/subscriptions/8d8bd4e2-2c8e-4915-85a9-c06631830f85/resourceGroups/rentalapp/providers/Microsoft.Communication/emailServices/eNotification/domains/AzureManagedDomain"
-    //     ]
-    // };
 
     const data = await request.text();
     context.log('data',data);
@@ -39,7 +25,7 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
     const mailContent = JSON.stringify(data).replace(/\\/g,'');
 
     const message = {
-        senderAddress: senderAddress, // "<donotreply@xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.azurecomm.net>",
+        senderAddress: senderAddress, 
         content: {
           subject: "Welcome to Azure Communication Services Email",
           plainText: data, // mailContent, // "This email message is sent from Azure Communication Services Email using the JavaScript SDK.",
