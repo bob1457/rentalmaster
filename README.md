@@ -53,3 +53,35 @@ npm run swa:login
 ```bash
 npm run swa:deploy
 ```
+### Local Test
+
+1. Build api under project root/api
+```bash
+npm run prestart
+```
+2. Build client(Angular) under project root
+```bash
+npm run build --prod
+```
+3. Start client and api with swa cli under project root
+```bash
+swa start dist/rentalmaster --api-location api
+```
+### Local Debugging
+
+Start client and function api separately
+```
+ng serve
+```
+and then under api folder
+
+```
+func start
+```
+### Email Sending
+
+Reference: 
+1. https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal (connect communication service to email domain)
+2. https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string&pivots=programming-language-javascript (sending email)
+
+

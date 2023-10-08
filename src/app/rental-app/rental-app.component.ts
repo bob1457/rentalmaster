@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RentalProperty } from '../models/rental-property';
 import { RentalService } from '../services/rental.service';
@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rental-app',
@@ -38,6 +40,8 @@ import {MatMenuModule} from '@angular/material/menu';
 })
 export class RentalAppComponent {
 
+  env = environment.production;
+
   applyForm: FormGroup;
 
   loading = false;
@@ -58,56 +62,40 @@ export class RentalAppComponent {
   
   private isVisible: boolean = false;
 
-  constructor(private rentalService: RentalService,
+  #rentalService = inject(RentalService);
+
+  constructor(//private rentalService: RentalService,
               private fb: FormBuilder,
-              private _snackBar: MatSnackBar) { 
-      
-      // this.applyForm = this.fb.group({
-      //   'FirstName' : [null, Validators.required], 
-      //   'LastName' : [null, Validators.required], 
-      //   'Email' : [null, Validators.required],
-      //   'Telephone' : [null, Validators.required],  
-      //   'Occupants' : [1, Validators.required], 
-      //   'CurrentAddress' : [null],
-      //   'pets' : [false],
-      //   'EmploymentStatus' : [null, Validators.required],
-      //   'Employer' : [null],
-      //   'Occupation' : [null],
-      //   'AnnualIncome' : [null],
-      //   'OtherIncome' : [null],
-        
-        
+              private router: Router,
+              private _snackBar: MatSnackBar) {}
 
-      // });
-
-  }
-
-  ngOnInit() {
+  ngOnInit() {  
+    console.log('env', this.env);  
 
     this.applyForm = this.fb.group({
 
       occupants: this.fb.array([]),
       references: this.fb.array([]),
 
-      FirstName : [null, Validators.required], 
-      LastName : [null, Validators.required], 
-      Email : [null, Validators.required],
-      Telephone : [null, Validators.required],  
+      FirstName : ['', Validators.required], 
+      LastName : ['', Validators.required], 
+      Email : ['', [Validators.required, Validators.email]],
+      Telephone : ['', [Validators.required, Validators.minLength(10)]],  
       Occupants : [1, Validators.required], 
       CurrentAddress : [null],
       pets : [false],
-      EmploymentStatus : [null, Validators.required],
-      Employer : [null],
-      Occupation : [null],
-      LengthOfEmployment : [null],
-      AnnualIncome : [null],
-      OtherIncome : [null],
-      ReasonToMove: [null],
-      AdditionalInfo: [null],      
+      EmploymentStatus : ['', Validators.required],
+      Employer : [''],
+      Occupation : [''],
+      LengthOfEmployment : [''],
+      AnnualIncome : [''],
+      OtherIncome : [''],
+      ReasonToMove: [''],
+      AdditionalInfo: [''],      
 
     });
 
-    this.rentalService.getRentalProperties().subscribe((data) => {
+    this.#rentalService.getRentalProperties().subscribe((data) => {
       this.properties = data
       console.log('rental property list', this.properties)
     }); true
@@ -121,9 +109,10 @@ export class RentalAppComponent {
 
   newOccupant(): FormGroup {
     return this.fb.group({
-      FullName : [null, Validators.required], 
-      Relation : [null, Validators.required],
+      FullName : ['', Validators.required], 
+      Relation : ['', Validators.required],
       Minor : [false],
+      Index: [],
     })
   }
 
@@ -142,10 +131,10 @@ export class RentalAppComponent {
 
   newReference(): FormGroup {
     return this.fb.group({
-      FullName : [null, Validators.required], 
-      Relation : [null, Validators.required],
-      Telephone : [null, Validators.required],
-      Email : [null, Validators.required],
+      FullName : ['', Validators.required], 
+      Relation : ['', Validators.required],
+      ContactTel : ['', [Validators.required, Validators.minLength(10)]],
+      ContactEmail : ['', [Validators.required,Validators.email]],
     })
   }
 
@@ -173,6 +162,11 @@ export class RentalAppComponent {
     console.log('selected occupants', occupants)
     // this.selectedProperty.occupants = occupants;
     this.moreOccupant = occupants;
+  }
+
+  onSelectReference(references): void {
+    console.log('selected references', references)
+    // this.selectedProperty.references = references;
   }
 
   showForm() {
@@ -205,9 +199,18 @@ export class RentalAppComponent {
     console.log('smoking', e.checked)
   }
 
-  onSelectRelation(relation) {
-    console.log('selected relation', relation)
-    relation == 'Child' ? this.child = true : this.child = false
+  onSelectRelation(relation, index) {
+    // let current = this.occupants().controls[index] as FormGroup;
+    // current.controls['Index'].valueChanges.subscribe((value) => {
+    //     console.log('value changed', value)
+    //   });
+    // console.log('current form', current)
+    // let value = current.controls['Index'].value;
+    // console.log('value', value)
+    // console.log('selected relation', relation)
+    // console.log(index)
+    // Not implemented
+    relation == ('Child') ? this.child = true : this.child = false
   }
 
   showRefForm() {
@@ -217,16 +220,24 @@ export class RentalAppComponent {
 
   submitForm() {
     this.loading = true;
-    // console.log('form submit', this.applyForm.value)
+    this.applyForm.value.rentalPropertyId = this.selectedPropertyId;
+    this.applyForm.value.occupants.forEach(o => {
+        if(o.Relation != 'Child') {
+          o.Minor = false
+        }
+    });    
+    console.log('form submit', this.applyForm.value)
     // console.log('form submitted')
 
     // this.openSnackBar('Application submitted successfully!', 'Close'); // local test
-    
-    this.rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
+    debugger;
+    this.#rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
       console.log('application submitted', data)
       this.loading = false;
       this.openSnackBar('Application submitted successfully!', 'Close');
       this.resetForm();
+      // this.router.navigate(['/']);
+      this.showApplyForm = false;
     });
   }
 
