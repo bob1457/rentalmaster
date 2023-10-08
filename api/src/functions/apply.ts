@@ -3,7 +3,8 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 
 require("dotenv").config();
 
-const { EmailClient, KnownEmailSendStatus, DefaultAzureCredentialOptions,ExcludeSharedTokenCacheCredential } = require("@azure/communication-email");
+// const { EmailClient, KnownEmailSendStatus } = require("@azure/communication-email");
+import { EmailClient, KnownEmailSendStatus } from "@azure/communication-email";
 
 const connectionString = process.env.EmailConnectionSettings;
 const senderAddress = process.env.SenderAddress;
@@ -22,7 +23,6 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
     const data = await request.text();
     context.log('data',data);
 
-    const mailContent = JSON.stringify(data).replace(/\\/g,'');
 
     const message = {
         senderAddress: senderAddress, 
@@ -33,7 +33,7 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
         recipients: {
           to: [
             {
-              address: "bob.h.yuan@gmail.com",
+              address: recipientAddress, // "bob.h.yuan@gmail.com",
               displayName: "Customer Name",
             },
           ],
@@ -76,11 +76,6 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
     } catch (e) {
         context.log(`Error sending: ${e}`);
     }
-    
-
-    // const data = await request.text();
-
-    
 
     context.log(`Received: ${data}`);
     
