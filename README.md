@@ -78,3 +78,10 @@ and then under api folder
 ```
 func start
 ```
+### Email Sending
+
+Reference: 
+1. https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal (connect communication service to email domain)
+2. https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string&pivots=programming-language-javascript (sending email)
+
+
