@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "EmailConnectionSettings": "endpoint=https://applyemail.canada.communication.azure.com/;accesskey=M3hF7B2GKNkPBfF6BXIL58LKykYIk5WGkLfzbM1ntnI5HDavvg7DRiQIOWJSoGmB+EcxA1NRHXXDxpSk4B0flw==",
+    "SenderAddress": "<DoNotReply@0f77ab63-3dd3-4685-89ea-cb49cf8db2bd.azurecomm.net>"
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*"
+  }
+}
