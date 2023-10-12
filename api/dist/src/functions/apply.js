@@ -35,13 +35,13 @@ function apply(request, context) {
                 to: [
                     {
                         address: recipientAddress,
-                        displayName: "Customer Name",
+                        displayName: "Property Manager",
                     },
                 ],
                 bcc: [
                     {
                         address: ccRecipientAddress,
-                        displayName: " BCC Customer",
+                        displayName: "Property Manager Assistant",
                     }
                 ]
             },

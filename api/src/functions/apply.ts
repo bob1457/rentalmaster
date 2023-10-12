@@ -35,13 +35,13 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
           to: [
             {
               address: recipientAddress, // "bob.h.yuan@gmail.com",
-              displayName: "Customer Name",
+              displayName: "Property Manager",
             },
           ],
           bcc: [
             {
               address: ccRecipientAddress,
-              displayName: " BCC Customer",
+              displayName: "Property Manager Assistant",
             }            
           ]
         },

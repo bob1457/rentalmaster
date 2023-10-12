@@ -7,11 +7,12 @@
     </div>    
     <mat-form-field class="w-full">
         <mat-label>Choose rental property</mat-label>
-        <mat-select #selectProperty (selectionChange)="onSelectProperty(selectProperty.value)">
+        <mat-select *ngIf="properties.length > 0; else noRental" #selectProperty (selectionChange)="onSelectProperty(selectProperty.value)">
           <mat-option *ngFor="let property of properties" [value]="property.id">
             {{property.title}}
           </mat-option>
         </mat-select>
+        <ng-template #noRental>No rental unit available</ng-template>
     </mat-form-field>
     <div class="flex flex-row">
         <div class=" w-1/4">
