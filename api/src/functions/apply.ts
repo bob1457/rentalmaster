@@ -8,7 +8,8 @@ import { EmailClient, KnownEmailSendStatus } from "@azure/communication-email";
 
 const connectionString = process.env.EmailConnectionSettings;
 const senderAddress = process.env.SenderAddress;
-const recipientAddress = "bob.h.yuan@gmail.com"
+const recipientAddress = process.env.recipientAddress; // "bob.h.yuan@gmail.com"
+const ccRecipientAddress = process.env.ccReceipt; // ""
 
 
 
@@ -27,7 +28,7 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
     const message = {
         senderAddress: senderAddress, 
         content: {
-          subject: "Welcome to Azure Communication Services Email",
+          subject: "Rental Application",
           plainText: data, // mailContent, // "This email message is sent from Azure Communication Services Email using the JavaScript SDK.",
         },
         recipients: {
@@ -37,6 +38,12 @@ export async function apply(request: HttpRequest, context: InvocationContext): P
               displayName: "Customer Name",
             },
           ],
+          bcc: [
+            {
+              address: ccRecipientAddress,
+              displayName: " BCC Customer",
+            }            
+          ]
         },
       };
 

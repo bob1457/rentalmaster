@@ -113,7 +113,6 @@ export class RentalAppComponent {
       FullName : ['', Validators.required], 
       Relation : ['', Validators.required],
       Minor : [false],
-      Index: [],
     })
   }
 
@@ -222,6 +221,7 @@ export class RentalAppComponent {
   submitForm() {
     this.loading = true;
     this.applyForm.value.rentalPropertyId = this.selectedPropertyId;
+    this.applyForm.value.rentalPropertyName = this.selectedProperty.title;
     this.applyForm.value.occupants.forEach(o => {
         if(o.Relation != 'Child') {
           o.Minor = false
