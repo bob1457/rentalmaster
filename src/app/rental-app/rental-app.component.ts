@@ -57,6 +57,7 @@ export class RentalAppComponent {
   showRef = false;
   employed = false;
   child = false;
+  submittedOk = false;
   
   properties: RentalProperty[] = []; //properties$: Observable<RentalProperty>[] = [];
   
@@ -237,7 +238,12 @@ export class RentalAppComponent {
       this.openSnackBar('Application submitted successfully!', 'Close');
       this.resetForm();
       // this.router.navigate(['/']);
-      this.showApplyForm = false;
+      this.showApplyForm = false; 
+      this.submittedOk = true;
+      setTimeout(() => {
+        this.submittedOk = false;
+      }, 2000);
+      
     });
   }
 
@@ -247,7 +253,9 @@ export class RentalAppComponent {
 
 
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action, {
+      duration: 2000
+    });
   }
 
 }
