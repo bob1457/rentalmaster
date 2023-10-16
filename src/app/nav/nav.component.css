@@ -1,0 +1,5 @@
+.active {
+    /* @apply pb-2 border-b-2 border-red-500; */
+    padding-bottom: 6px;
+    border-bottom: 3px solid red;
+}

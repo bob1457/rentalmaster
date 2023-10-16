@@ -21,15 +21,17 @@
       </div>
       <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
         <ul class="flex flex-col lg:flex-row list-none ml-auto">
-          <li class="nav-item">
-            <a routerLink="home" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fa fa-home text-lg leading-lg text-orange-500 opacity-75"></i><span class="ml-2">Home</span>
+          <li class="flex nav-item">
+            <i class="fa fa-home text-lg leading-lg text-orange-500 opacity-75 mr-2 pt-1"></i>
+            <a routerLink="/" routerLinkActive='active' [routerLinkActiveOptions]={exact:true} class="px-0 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <span>Home</span>
               <!-- <i class="fa fa-house"></i> -->
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="about" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fa fa-info-circle text-lg leading-lg text-green-300 opacity-75"></i><span class="ml-2">About</span>
+          <li class="flex nav-item">
+            <i class="fa fa-info-circle text-lg leading-lg text-green-300 opacity-75 ml-4 mr-2 pt-1"></i>
+            <a routerLink="about" routerLinkActive='active' class="px-0 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <span>About</span>
             </a>
           </li>
           <!-- <li class="nav-item">
