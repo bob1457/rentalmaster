@@ -19,8 +19,7 @@ import { Router } from '@angular/router';
   selector: 'app-rental-app',
   standalone: true,
   imports: [
-    CommonModule, 
-    MatIconModule, 
+    CommonModule,      
     MatButtonModule, 
     MatSelectModule,
     MatFormFieldModule, 

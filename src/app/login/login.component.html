@@ -1,0 +1,40 @@
+<!-- <p>login works!</p> -->
+<section class="container w-[90%] md:w-3/5 mx-auto px-4 mt-12">
+    <div class="w-full md:w-3/5 border-4 mx-auto p-4 shadow-lg rounded-lg bg-slate-100">
+        <div class="text-center text-2xl mt-4 p-4">
+            <mat-icon class="text-3xl text-green-500">vpn_key</mat-icon> Login to Manage
+        </div>
+        <hr class="text-center w-full md:2/3">
+            <form class="flex flex-col w-full mt-10 mb-2" [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+                <mat-form-field appearance="fill" class="w-full md:w-2/3 mx-auto">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="First Name" formControlName="email" >
+                    
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="w-full md:w-2/3 mx-auto">
+                    <mat-hint class="text-red-600 text-lg">*</mat-hint>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="First Name" formControlName="password" >
+                    
+                </mat-form-field>
+                <div class="w-full md:w-2/3 mx-auto">
+                    <button type="submit" mat-raised-button color="primary"  class="w-full mr-2"><span class="text-yellow-500 uppercase">login</span><mat-icon>check_circle_outline</mat-icon></button>
+                </div>
+                <!-- [disabled]="!loginForm.valid" -->
+            </form>
+            <div class="flex justify-between w-full md:w-2/3 mx-auto">
+                <div>No account, request one</div>
+                <div>Forgot password?</div>
+            </div>
+            <div class="text-center font-semibold mx-4 mt-2">OR</div>
+            <div class="w-full md:w-2/3 mx-auto">
+                <button type="button" mat-raised-button style="background-color: #DB4437;" class="w-full mr-2 mb-4 mt-4"><span class="text-white uppercase">continue with google</span><span class="ml-4 text-white"><i class="fa fa-google" aria-hidden="true"></i></span></button>
+                <button type="button" mat-raised-button style="background-color: #4267B2"  class="w-full mr-2"><span class="text-white uppercase">continue with facebook</span><span class="ml-4 text-white"><i class="fa fa-facebook-official" aria-hidden="true"></i></span></button>
+            </div>
+            
+        
+    </div>
+    
+
+</section>
