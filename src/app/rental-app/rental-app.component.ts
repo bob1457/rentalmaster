@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RentalProperty } from '../models/rental-property';
 import { RentalService } from '../services/rental.service';
@@ -39,11 +39,11 @@ import { Router } from '@angular/router';
 })
 export class RentalAppComponent {
 
+  loading = signal(true);
+
   env = environment.production;
 
   applyForm: FormGroup;
-
-  loading = false;
 
   selectedProperty: any = {};
   show = false;
@@ -95,10 +95,15 @@ export class RentalAppComponent {
 
     });
 
-    this.#rentalService.getRentalProperties().subscribe((data) => {
-      this.properties = data
+    this.#rentalService.getRentalProperties().subscribe((data) => {      
+      this.properties = data;
+      this.loading.set(false);
       console.log('rental property list', this.properties)
     }); true
+  }
+
+  isLoading() {
+    return this.loading();
   }
 
   // FormArray
@@ -218,7 +223,7 @@ export class RentalAppComponent {
 
 
   submitForm() {
-    this.loading = true;
+    // this.loading = true;
     this.applyForm.value.rentalPropertyId = this.selectedPropertyId;
     this.applyForm.value.rentalPropertyName = this.selectedProperty.title;
     this.applyForm.value.occupants.forEach(o => {
@@ -233,11 +238,11 @@ export class RentalAppComponent {
     debugger;
     this.#rentalService.submitRentalApplication(this.applyForm.value).subscribe((data) => {
       console.log('application submitted', data)
-      this.loading = false;
+      this.loading.set(false);
       this.openSnackBar('Application submitted successfully!', 'Close');
       this.resetForm();
       // this.router.navigate(['/']);
-      this.showApplyForm = false; 
+      this.showApplyForm = false;
       this.submittedOk = true;
       setTimeout(() => {
         this.submittedOk = false;
