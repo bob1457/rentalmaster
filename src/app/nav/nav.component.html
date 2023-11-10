@@ -43,7 +43,7 @@
           <li *ngIf="!user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
             <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">
               <!-- login -->
-              <a href="/.auth/login/{{ providers }}?post_login_redirect_uri={{ redirect }}">{{ providers[2] }}</a>
+              <a href="/.auth/login/{{ providers }}?post_login_redirect_uri={{ login_redirect }}">{{ providers[2] }}</a>
             </span>
             <!-- <ng-template #logout>
               <a href="/.auth/logout?post_logout_redirect_uri={redirect}}">Logout</a>
@@ -52,7 +52,7 @@
           </li>
           <li *ngIf="user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
             <i class="fa fa-sign-out text-lg leading-lg text-red-500 opacity-75"></i><span class="ml-2">
-              <a href="/.auth/logout?post_logout_redirect_uri={{ redirect }}">logout</a> 
+              <a href="/.auth/logout?post_logout_redirect_uri={{ logout_redirect }}">logout</a> 
             </span> 
                       
           </li>

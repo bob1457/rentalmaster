@@ -16,7 +16,8 @@ export class NavComponent {
   env = environment.production;
   user: UserInfo | null;
   providers = ['twitter', 'github', 'aad'];
-  redirect = '/manage'; // window.location.pathname;
+  login_redirect = "/manage"; //window.location.pathname;
+  logout_redirect = "/"; //
   
   
   toggleNavbar(){
@@ -26,7 +27,7 @@ export class NavComponent {
   async ngOnInit() {
 
     console.log('production', this.env)
-    console.log('redirect', this.redirect)
+    
     this.user = await this.getUserInfo();
   }
 
