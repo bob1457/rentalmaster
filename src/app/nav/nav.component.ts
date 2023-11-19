@@ -28,20 +28,20 @@ export class NavComponent {
 
     console.log('production', this.env)
     
-    this.user = await this.getUserInfo();
+    // this.user = await this.getUserInfo();
   }
 
-  async getUserInfo() {
-    try {
-      const response = await fetch('/.auth/me');
-      const payload = await response.json();
-      const { clientPrincipal } = payload;
-      return clientPrincipal;
-    } catch (error) {
-      console.error('No profile could be found');
-      return undefined;
-    }
-  }
+  // async getUserInfo() {
+  //   try {
+  //     const response = await fetch('/.auth/me');
+  //     const payload = await response.json();
+  //     const { clientPrincipal } = payload;
+  //     return clientPrincipal;
+  //   } catch (error) {
+  //     console.error('No profile could be found');
+  //     return undefined;
+  //   }
+  // }
 
   logout() {
     console.log('logout')

@@ -29,7 +29,7 @@
             </a>
           </li>
           <li class="flex nav-item">
-            <i class="fa fa-info-circle text-lg leading-lg text-green-300 opacity-75 ml-4 mr-2 pt-1"></i>
+            <i class="fa fa-info-circle text-lg leading-lg text-green-300 opacity-75 md:ml-4 mr-2 pt-1"></i>
             <a routerLink="about" routerLinkActive='active' class="px-0 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
               <span>About</span>
             </a>
@@ -40,22 +40,32 @@
               <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">login</span>
             </a>
           </li> -->
-          <li *ngIf="!user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-            <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">
-              <!-- login -->
+          @if(!user) {
+            <li class="pr-3 md:pl-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+              <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">
+                <a href="/.auth/login/{{ providers }}?post_login_redirect_uri={{ login_redirect }}">{{ providers[2] }}</a>
+              </span>
+            </li>
+          }
+          <!-- <li *ngIf="!user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+            <i class="fa fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">              
               <a href="/.auth/login/{{ providers }}?post_login_redirect_uri={{ login_redirect }}">{{ providers[2] }}</a>
             </span>
-            <!-- <ng-template #logout>
-              <a href="/.auth/logout?post_logout_redirect_uri={redirect}}">Logout</a>
-            </ng-template> -->
-            
-          </li>
-          <li *ngIf="user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+          </li> -->
+          @if(user){
+            <li class="pr-3 md:pl-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+              <i class="fa fa-sign-out text-lg leading-lg text-red-500 opacity-75"></i><span class="ml-2">
+                <a href="/.auth/logout?post_logout_redirect_uri={{ logout_redirect }}">logout</a> 
+              </span> 
+                        
+            </li>
+          }
+          <!-- <li *ngIf="user" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
             <i class="fa fa-sign-out text-lg leading-lg text-red-500 opacity-75"></i><span class="ml-2">
               <a href="/.auth/logout?post_logout_redirect_uri={{ logout_redirect }}">logout</a> 
             </span> 
                       
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

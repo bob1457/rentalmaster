@@ -1,0 +1,9 @@
+mat-icon {
+    /* font-size: 30px; */
+    height: 40px ;
+    width: 40px;
+  }
+
+.manage-tile {
+    @apply w-full h-28 md:h-36 rounded-md p-8
+}
