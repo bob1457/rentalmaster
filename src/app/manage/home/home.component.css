@@ -5,5 +5,5 @@ mat-icon {
   }
 
 .manage-tile {
-    @apply flex w-full h-28 md:h-36 rounded-md p-8
+    @apply flex w-full h-28 md:h-36 rounded-md p-8 shadow-xl hover:shadow-2xl;
 }
