@@ -277,16 +277,9 @@
     </div>
     
 </section>
-<section  class="container w-full md:w-2/3 mx-auto h-[200px]">
-    <!-- <button mat-button color="primary" class="mt-4"  aria-label="button">
-        <mat-icon>keyboard_arrow_down</mat-icon>
-        Open Assistant        
-    </button> -->
-    <!-- <button mat-button color="primary" class="mt-4 w-10"  aria-label="button">
-        Primary
-        <mat-icon>keyboard_arrow_down</mat-icon>
-    </button> -->
-    <div class="p-2 mt-4 ml-[10px]">
+<section  class="container w-full md:w-2/3 mx-auto h-auto">
+    
+    <div class="p-2 mt-4 mb-4 ml-[10px]">
         <button  mat-raised-button (click) ="assitOpenClose()" >
             @if(!openAssistant){
                 Open Assistant
@@ -302,7 +295,7 @@
         </button>    
             
     </div>
-    <div *ngIf="openAssistant">
+    <div *ngIf="openAssistant" class="p-2 ml-4 mb-4">
         <div class="flex justify-start space-x-2">
             <!-- <mat-icon class="text-orange-700">line_weight</mat-icon>  mx-auto -->
             <div class="flex items-start mt-4 p-2 ml-[10px]">
@@ -315,10 +308,11 @@
             
         </div>
         <hr class="border-gray-300 p-2 ml-[10px]">
+        <div class="p-2 ml-[10px]">
+            AI Assistant
+        </div>
     </div>
-    <div class="p-2 ml-[10px]">
-        AI Assistant
-    </div>
+    
 </section>
 <footer class="bg-zinc-300 rounded-lg shadow dark:bg-gray-900">
     <div class="w-full max-w-screen-xl mx-auto p-4">
