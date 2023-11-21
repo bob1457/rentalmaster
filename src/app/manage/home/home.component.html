@@ -73,7 +73,7 @@
         </a>
     </div>
 
-    <div class="grid grid-cols-1 p-4 w-full h-[350px] overflow-auto ">
+    <div class="scrollbar-thin grid grid-cols-1 p-4 pr-2 w-full h-[350px] overflow-auto ">
         <div class="bg-transparent border-[0px] border-slate-400 rounded-md">
             
 
@@ -277,7 +277,7 @@
     </div>
     
 </section>
-<section  class="container w-full md:w-2/3 mx-auto h-auto">
+<section  class="container w-full md:w-2/3 mx-auto">
     
     <div class="p-2 mt-4 mb-4 ml-[10px]">
         <button  mat-raised-button (click) ="assitOpenClose()" >
@@ -296,20 +296,32 @@
             
     </div>
     <div *ngIf="openAssistant" class="p-2 ml-4 mb-4">
-        <div class="flex justify-start space-x-2">
-            <!-- <mat-icon class="text-orange-700">line_weight</mat-icon>  mx-auto -->
+        <!-- <div class="flex justify-start space-x-2">            
             <div class="flex items-start mt-4 p-2 ml-[10px]">
                 <mat-icon class="text-green-700 text-3xl">settings</mat-icon>
                 <label for="countries" class="block text-lg sm:text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">Resource Center</label>
             </div>
             <div class=" mt-4 p-2">
                 Description
-            </div>
-            
-        </div>
-        <hr class="border-gray-300 p-2 ml-[10px]">
-        <div class="p-2 ml-[10px]">
-            AI Assistant
+            </div>            
+        </div> -->
+
+        <hr class=" p-2 ml-[10px] ">
+        <div class="-ml-[10px] mr-[10px]">
+           <div class="text-gray-700 w-full h-60 grid grid-cols-1 md:grid-cols-2 gap-4 pl-0 ">
+                <div class="bg-white space-x-2 p-2 order-2 md:order-1 border-[1px] border-gray-200 rounded-lg ">
+                    Query Results Window
+                </div>
+                <div class="bg-white space-x-2 p-2 order-1 md:order-2 border-[1px] border-gray-200 rounded-lg ">
+                    Resource Links
+                </div>
+           </div>
+           <div class="mt-4 border-[1px] border-gray-200 rounded-lg ">
+                <div class="h-24 bg-white">
+                    User Query Window
+            </div> 
+           </div>
+           
         </div>
     </div>
     
@@ -336,3 +348,6 @@
         </div>
     </div>
 </footer>
+
+
+<!-- Disable material tab animation:  [@.disabled]="true" in top container-->
