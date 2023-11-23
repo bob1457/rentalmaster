@@ -16,5 +16,5 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     // importProvidersFrom(MatButtonModule),
     // importProvidersFrom(MatIconModule)
-]
+  ]
 };

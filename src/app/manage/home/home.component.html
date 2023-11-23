@@ -1,6 +1,6 @@
 <!-- <p>home works!</p> -->
 
-<div class="max-h-90vh overflow-y-auto">
+<div class="">
     <section class="container w-full lg:w-[90%] mx-auto">
         <div class="flex space-x-2 mx-auto">
             <!-- <mat-icon class="text-orange-700">line_weight</mat-icon> -->
@@ -11,7 +11,7 @@
             
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 mt-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
             <a routerLink="/about" class=" cursor-pointer">
                 <div class="flex flex-col manage-tile bg-red-500/50 relative">
                     <!-- <div class=" p-[4px] md:p-2 border-2 border-black w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-full"><mat-icon class="p-2 mr-4 rounded-  -mt-[-12px] -ml-[11px]">home</mat-icon></div> -->
@@ -78,7 +78,7 @@
         <div class="p-4 mt-0 overflow-y-auto">
             <mat-tab-group  [@.disabled]="true">
                 <mat-tab>
-                    <div class="scrollbar-thin grid grid-cols-1 p-4 pl-2 pr-2 w-full max-h-[280px] md:max-h-[360px]">
+                    <div class="scrollbar-thin grid grid-cols-1 p-4 pl-2 pr-2 w-full h-auto">
                         <ng-template  mat-tab-label>
                             <mat-icon class="mt-[14px] text-red-500">view_list</mat-icon>
                             <span class="font-semibold"><span class="hidden md:inline">Rental</span> Listing</span>
@@ -273,8 +273,8 @@
         
     </section>
     <app-assistant></app-assistant>
-</div>
-<!-- <footer class="bg-zinc-300 rounded-lg shadow md:hidden dark:bg-gray-900 fixed inset-x-0 bottom-0 w-full">
+
+<!-- <footer class="bg-zinc-300 rounded-lg shadow dark:bg-gray-900 fixed inset-x-0 bottom-0 w-full">
     <div class="w-full max-w-screen-xl mx-auto p-4">
         <div class="flex items-center justify-between">
             <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -296,6 +296,7 @@
         </div>
     </div>
 </footer> -->
+</div>
 
 
 
