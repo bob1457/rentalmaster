@@ -1,277 +1,279 @@
 <!-- <p>home works!</p> -->
 
-<section class="container w-full lg:w-[90%] mx-auto">
-    <div class="flex space-x-2 mx-auto">
-        <!-- <mat-icon class="text-orange-700">line_weight</mat-icon> -->
-        <div class="flex mx-auto items-start">
-            <mat-icon class="text-green-700 text-3xl">settings</mat-icon>
-            <label for="countries" class="block text-lg sm:text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">manage rental properties</label>
+<div class="max-h-90vh overflow-y-auto">
+    <section class="container w-full lg:w-[90%] mx-auto">
+        <div class="flex space-x-2 mx-auto">
+            <!-- <mat-icon class="text-orange-700">line_weight</mat-icon> -->
+            <div class="flex mx-auto items-start">
+                <mat-icon class="text-green-700 text-3xl">settings</mat-icon>
+                <label for="countries" class="block text-lg sm:text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">manage rental properties</label>
+            </div>
+            
         </div>
         
-    </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 mt-8">
-        <a routerLink="/about" class=" cursor-pointer">
-            <div class="flex flex-col manage-tile bg-red-500/50 relative">
-                <!-- <div class=" p-[4px] md:p-2 border-2 border-black w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-full"><mat-icon class="p-2 mr-4 rounded-  -mt-[-12px] -ml-[11px]">home</mat-icon></div> -->
-                <!-- <div> -->
-                    <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                        <img src="../../../assets/images/home.png"  alt="">
-                    <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                    </div>
-                    <div class="mt-2 -ml-4 text-lg font-semibold">
-                        25
-                    </div>
-                <!-- </div> -->
-                
-                <div class="absolute left-[90px] lg:left-[120px] md:left-[100px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Listings</div>
-            </div>
-        </a>
-        <a>
-            <div class="flex flex-col manage-tile bg-green-500/50 relative">
-                <!-- <div> -->
-                    <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                        <img src="../../../assets/images/file.png" alt="">
-                    <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                    </div>
-                    <div class="mt-2 -ml-4 text-lg font-semibold">
-                        14
-                    </div>
-                <!-- </div> -->
-                
-                <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> <span class="text-[13px] md:text-[1rem]">Contracts</span></div>
-            </div>
-        </a>
-        <a>
-            <div class="flex flex-col manage-tile bg-purple-700/70 relative">
-                <!-- <div> -->
-                    <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                        <img src="../../../assets/images/content-design.png" alt="">
-                    <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                    </div>
-                    <div class="mt-2 -ml-4 text-lg font-semibold">
-                        8
-                    </div>
-                <!-- </div> -->
-                
-                <div class="absolute left-[90px] lg:left-[110px]  md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br><span class="text-[14px] lg:text-lg md:text-sm">Applicants</span></div>
-            </div>
-        </a>
-        <a>
-            <div class="flex flex-col manage-tile bg-blue-500/60 relative cursor-pointer">
-                <!-- <div> -->
-                    <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                        <img src="../../../assets/images/group.png" alt="">
-                    <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                    </div>
-                    <div class="mt-2 -ml-4 text-lg font-semibold">
-                        20
-                    </div>
-                <!-- </div> -->
-                
-                <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Tenants</div>
-            </div>
-        </a>
-    </div>
-
-    <div class="p-4 mt-0  overflow-y-auto">
-        <mat-tab-group  [@.disabled]="true">
-            <mat-tab>
-                <div class="scrollbar-thin grid grid-cols-1 p-4 pl-2 pr-2 w-full max-h-[300px] md:max-h-[360px]">
-                    <ng-template  mat-tab-label>
-                        <mat-icon class="mt-[14px] text-red-500">view_list</mat-icon>
-                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Listing</span>
-                    </ng-template>
-                    <div class="bg-transparent border-[0px] border-slate-400 rounded-md">                       
-
-                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                            
-                            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-y-auto">
-                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                    <tr>
-                                        <th scope="col" class="p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                                            </div>
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Name
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Position
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Status
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Action
-                                        </th>
-                                    </tr>
-                                </thead> 
-                                <tbody>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="w-4 p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                            </div>
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/37.jpg" alt="Jese image">
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">Neil Sims</div>
-                                                <div class="font-normal text-gray-500">neil.sims&#64;flowbite.com</div>
-                                            </div>  
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            React Developer
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="w-4 p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-                                            </div>
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/47.jpg" alt="Jese image">
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">Bonnie Green</div>
-                                                <div class="font-normal text-gray-500">bonnie&#64;flowbite.com</div>
-                                            </div>
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            Designer
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="w-4 p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-                                            </div>
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/27.jpg" alt="Jese image">
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">Jese Leos</div>
-                                                <div class="font-normal text-gray-500">jese&#64;flowbite.com</div>
-                                            </div>
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            Vue JS Developer
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="w-4 p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-                                            </div>
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/12.jpg" alt="Jese image">
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">Thomas Lean</div>
-                                                <div class="font-normal text-gray-500">thomes;flowbite.com</div>
-                                            </div>
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            UI/UX Engineer
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="w-4 p-4">
-                                            <div class="flex items-center">
-                                                <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-                                            </div>
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/15.jpg" alt="Jese image">
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">Leslie Livingston</div>
-                                                <div class="font-normal text-gray-500">leslie&#64;flowbite.com</div>
-                                            </div>
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            SEO Specialist
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 mt-8">
+            <a routerLink="/about" class=" cursor-pointer">
+                <div class="flex flex-col manage-tile bg-red-500/50 relative">
+                    <!-- <div class=" p-[4px] md:p-2 border-2 border-black w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-full"><mat-icon class="p-2 mr-4 rounded-  -mt-[-12px] -ml-[11px]">home</mat-icon></div> -->
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/home.png"  alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
                         </div>
-
-                    </div>
+                        <div class="mt-2 -ml-4 text-lg font-semibold">
+                            25
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[100px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Listings</div>
                 </div>
-            </mat-tab>
-            <mat-tab label="Second">
-                <ng-template mat-tab-label>
-                    <mat-icon class="mt-[14px] text-green-500">file_copy</mat-icon>
-                    <span class="font-semibold"><span class="hidden md:inline">Rental</span> Agreement</span>
-                  </ng-template>
-                  content 2
-            </mat-tab>
-            <mat-tab label="Third">
-                <ng-template  mat-tab-label>
-                    <mat-icon class="mt-[14px] text-purple-700"> insert_drive_file</mat-icon>
-                    <span class="font-semibold"><span class="hidden md:inline">Rental</span> Applications</span>
-                </ng-template> 
-            </mat-tab>
-            <mat-tab label="Forth">
-                <ng-template  mat-tab-label>
-                    <mat-icon class="mt-[14px] text-blue-500">people</mat-icon>
-                    <span class="font-semibold"><span class="hidden md:inline">Rental</span> Tenants</span>
-                </ng-template>
-                 Content 4 </mat-tab>
-        </mat-tab-group>
-    </div>
-    
-    
-</section>
-<app-assistant></app-assistant>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-green-500/50 relative">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/file.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="mt-2 -ml-4 text-lg font-semibold">
+                            14
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> <span class="text-[13px] md:text-[1rem]">Contracts</span></div>
+                </div>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-purple-700/70 relative">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/content-design.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="mt-2 -ml-4 text-lg font-semibold">
+                            8
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[110px]  md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br><span class="text-[14px] lg:text-lg md:text-sm">Applicants</span></div>
+                </div>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-blue-500/60 relative cursor-pointer">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/group.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="mt-2 -ml-4 text-lg font-semibold">
+                            20
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Tenants</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="p-4 mt-0 overflow-y-auto">
+            <mat-tab-group  [@.disabled]="true">
+                <mat-tab>
+                    <div class="scrollbar-thin grid grid-cols-1 p-4 pl-2 pr-2 w-full max-h-[280px] md:max-h-[360px]">
+                        <ng-template  mat-tab-label>
+                            <mat-icon class="mt-[14px] text-red-500">view_list</mat-icon>
+                            <span class="font-semibold"><span class="hidden md:inline">Rental</span> Listing</span>
+                        </ng-template>
+                        <div class="bg-transparent border-[0px] border-slate-400 rounded-md">                       
+
+                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                
+                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-y-auto">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                        <tr>
+                                            <th scope="col" class="p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                                                </div>
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Name
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Position
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Status
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead> 
+                                    <tbody>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/37.jpg" alt="Jese image">
+                                                <div class="ps-3">
+                                                    <div class="text-base font-semibold">Neil Sims</div>
+                                                    <div class="font-normal text-gray-500">neil.sims&#64;flowbite.com</div>
+                                                </div>  
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                React Developer
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/47.jpg" alt="Jese image">
+                                                <div class="ps-3">
+                                                    <div class="text-base font-semibold">Bonnie Green</div>
+                                                    <div class="font-normal text-gray-500">bonnie&#64;flowbite.com</div>
+                                                </div>
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Designer
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/27.jpg" alt="Jese image">
+                                                <div class="ps-3">
+                                                    <div class="text-base font-semibold">Jese Leos</div>
+                                                    <div class="font-normal text-gray-500">jese&#64;flowbite.com</div>
+                                                </div>
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Vue JS Developer
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/12.jpg" alt="Jese image">
+                                                <div class="ps-3">
+                                                    <div class="text-base font-semibold">Thomas Lean</div>
+                                                    <div class="font-normal text-gray-500">thomes;flowbite.com</div>
+                                                </div>
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                UI/UX Engineer
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <img class="w-10 h-10 rounded-full" src="https://xsgames.co/randomusers/assets/avatars/male/15.jpg" alt="Jese image">
+                                                <div class="ps-3">
+                                                    <div class="text-base font-semibold">Leslie Livingston</div>
+                                                    <div class="font-normal text-gray-500">leslie&#64;flowbite.com</div>
+                                                </div>
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                SEO Specialist
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Second">
+                    <ng-template mat-tab-label>
+                        <mat-icon class="mt-[14px] text-green-500">file_copy</mat-icon>
+                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Agreement</span>
+                    </ng-template>
+                    content 2
+                </mat-tab>
+                <mat-tab label="Third">
+                    <ng-template  mat-tab-label>
+                        <mat-icon class="mt-[14px] text-purple-700"> insert_drive_file</mat-icon>
+                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Applications</span>
+                    </ng-template> 
+                </mat-tab>
+                <mat-tab label="Forth">
+                    <ng-template  mat-tab-label>
+                        <mat-icon class="mt-[14px] text-blue-500">people</mat-icon>
+                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Tenants</span>
+                    </ng-template>
+                    Content 4 </mat-tab>
+            </mat-tab-group>
+        </div>
+        
+        
+    </section>
+    <app-assistant></app-assistant>
+</div>
 <!-- <footer class="bg-zinc-300 rounded-lg shadow md:hidden dark:bg-gray-900 fixed inset-x-0 bottom-0 w-full">
     <div class="w-full max-w-screen-xl mx-auto p-4">
         <div class="flex items-center justify-between">
