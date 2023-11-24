@@ -125,8 +125,8 @@
             <!-- Form array for occupants -->
             <div formArrayName="occupants" id="occupants">
                 <div *ngFor="let occupant of occupants().controls; let occupantIndex = index" >
-                    <div [formGroupName]="occupantIndex" class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 relative">
-                        <mat-icon><span class="text-red-700 text-md absolute right-2 top-0 cursor-pointer" (click)="removeOccupantFormGroup(occupantIndex)">cancel</span></mat-icon>                       
+                    <div [formGroupName]="occupantIndex" class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 rounded-lg relative">
+                        <mat-icon><span class="text-red-700 text-md absolute right-4 top-2 cursor-pointer" (click)="removeOccupantFormGroup(occupantIndex)">cancel</span></mat-icon>                       
                         <div class="flex flex-row w-full flex-wrap -mt-8"> 
                             <mat-form-field appearance="fill" class="w-1/2 sm:w-1/3 mr-2">
                                 <mat-hint class="text-red-600 text-lg">*</mat-hint>
@@ -209,8 +209,8 @@
             <!-- Form group for reference -->
             <div formArrayName="references" id="references">
                 <div [formGroupName]="referenceIndex" *ngFor="let reference of references().controls; let referenceIndex = index" >
-                    <div class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 relative">
-                        <mat-icon><span class="text-red-700 text-md absolute right-2 top-0 cursor-pointer" (click)="removeReferenceFormGroup(referenceIndex)">cancel</span></mat-icon>
+                    <div class="border-blue-700 border-solid border-2 p-2 pt-4 mb-4 rounded-lg relative">
+                        <mat-icon><span class="text-red-700 text-md absolute right-4 top-2 cursor-pointer" (click)="removeReferenceFormGroup(referenceIndex)">cancel</span></mat-icon>
                         <div  class="flex flex-row w-full">
                             <mat-form-field appearance="fill" class="w-1/2 mr-4">
                                 <mat-hint class="text-red-600 text-lg">*</mat-hint>
@@ -293,10 +293,21 @@
     <footer class="bg-zinc-300 rounded-lg shadow dark:bg-gray-900 fixed inset-x-0 bottom-0 w-full z-50">
         <div class="w-full max-w-screen-xl mx-auto p-4">
             <div class="flex items-center justify-between">
-                <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <div class="flex gap-4">
+
+                
+                    <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                        
+                        <span class="self-center text-2xl whitespace-nowrap uppercase font-bold">rm</span>
+                    </a>
+                    <!-- <div class="h-4 w-4"> -->
+                        <a href=""><mat-icon class="h-4 w-4 text-green-700 mt-[5px]">live_help</mat-icon></a>
+                        <!-- <button mat-mini-fab color="warn" class="button-dialog" aria-label="Example icon button with a filter list icon">
+                        
+                        </button> -->
+                    <!-- </div> -->
                     
-                    <span class="self-center text-2xl whitespace-nowrap uppercase font-bold">rm</span>
-                </a>
+                </div>
                 <ul class="flex flex-wrap items-center mb-2 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     
                     <li>

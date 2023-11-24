@@ -14,6 +14,12 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+
 
 @Component({
   selector: 'app-rental-app',
@@ -31,12 +37,16 @@ import { Router } from '@angular/router';
     MatCheckboxModule, 
     MatSnackBarModule,  
     MatMenuModule, 
-    MatIconModule
+    MatIconModule,
+    MatBottomSheetModule
   ],
   templateUrl: './rental-app.component.html',
   styleUrls: ['./rental-app.component.css']
 })
 export class RentalAppComponent {
+  
+
+  _bottomSheet = inject(MatBottomSheet);
 
   loading = signal(true);
 
@@ -104,6 +114,7 @@ export class RentalAppComponent {
   isLoading() {
     return this.loading();
   }
+  
 
   // FormArray
 
@@ -262,3 +273,5 @@ export class RentalAppComponent {
   }
 
 }
+
+
