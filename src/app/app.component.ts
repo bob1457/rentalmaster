@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { RentalAppComponent } from './rental-app/rental-app.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { RentalAppComponent } from './rental-app/rental-app.component';
     CommonModule, 
     RouterModule, 
     NavComponent,
+    FooterComponent,
     RentalAppComponent
   ],
   templateUrl: './app.component.html',

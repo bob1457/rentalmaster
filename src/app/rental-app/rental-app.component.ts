@@ -19,6 +19,7 @@ import {
   MatBottomSheetModule,
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
@@ -38,7 +39,8 @@ import {
     MatSnackBarModule,  
     MatMenuModule, 
     MatIconModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    FooterComponent
   ],
   templateUrl: './rental-app.component.html',
   styleUrls: ['./rental-app.component.css']
