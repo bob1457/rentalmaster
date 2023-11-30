@@ -75,45 +75,23 @@
             </a>
         </div>
 
-        <div class="p-4 mt-0 overflow-y-scroll h-[400px] lg:max-h-[350px] md:h-scroll">
-            <mat-tab-group  [@.disabled]="true">
-                <mat-tab>
-                    <div class="scrollbar-thin grid grid-cols-1 p-4 pl-2 pr-2 w-full">
-                        <ng-template  mat-tab-label>
-                            <mat-icon class="mt-[14px] text-red-500">view_list</mat-icon>
-                            <span class="font-semibold"><span class="hidden md:inline">Rental</span> Listing</span>
-                        </ng-template>
-                        <div class="bg-transparent border-[0px] border-slate-400 rounded-md">                       
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-0 px-[12px]">
+            <div class="bg-slate-400/10 xl:h-72 xl:mx-auto lg:h-72 md:h-64 h-48">
+                <!-- <ngx-charts-pie-chart 
+                    [results]="rentalStatusData"
+                    [legend]="true"
+                    [legendTitle]="'Rental Properties'" 
+                    [view]="[1000,300]"
+                    [labels]="true" >
+                </ngx-charts-pie-chart> -->
+                <app-property-type-pie-chart></app-property-type-pie-chart>
+            </div>
+            <div class="bg-blue-400 lg:h-72 md:h-64 h-60">
 
-                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                                
-                                <!-- content -->
-                                
-                            </div>
+            </div>
+            <div class="bg-purple-400 lg:h-72 md:h-64 h-60 col-span-2">
 
-                        </div>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Second">
-                    <ng-template mat-tab-label>
-                        <mat-icon class="mt-[14px] text-green-500">file_copy</mat-icon>
-                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Agreement</span>
-                    </ng-template>
-                    content 2
-                </mat-tab>
-                <mat-tab label="Third">
-                    <ng-template  mat-tab-label>
-                        <mat-icon class="mt-[14px] text-purple-700"> insert_drive_file</mat-icon>
-                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Applications</span>
-                    </ng-template> 
-                </mat-tab>
-                <mat-tab label="Forth">
-                    <ng-template  mat-tab-label>
-                        <mat-icon class="mt-[14px] text-blue-500">people</mat-icon>
-                        <span class="font-semibold"><span class="hidden md:inline">Rental</span> Tenants</span>
-                    </ng-template>
-                    Content 4 </mat-tab>
-            </mat-tab-group>
+            </div>
         </div>
         
         

@@ -1,0 +1,13 @@
+<!-- <p>property-type-pie-chart works!</p> -->
+<!-- <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'"> </canvas> -->
+<div>
+    <canvas class="h-32 w-48 md:h-36 md:w-52 xl:w-72 lg:h-40 lg:w-60" baseChart
+        [type]="'pie'"
+        [datasets]="pieChartDatasets"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        [plugins]="pieChartPlugins"
+        [legend]="pieChartLegend">
+    </canvas>
+</div>
+

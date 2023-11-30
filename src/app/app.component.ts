@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { RentalAppComponent } from './rental-app/rental-app.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgChartsConfiguration } from 'ng2-charts';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ import { FooterComponent } from './footer/footer.component';
     RentalAppComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [
+    {provide: NgChartsConfiguration, useValue: { generateColors: false }}
+  ]
 })
 export class AppComponent {
   title = 'Rental Master';
