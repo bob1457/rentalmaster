@@ -9,6 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FooterComponent } from 'src/app/footer/footer.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PropertyTypePieChartComponent } from 'src/app/charts/property-type-pie-chart/property-type-pie-chart.component';
+import { PropertyLocationStatusBarChartComponent } from 'src/app/charts/property-location-status-bar-chart/property-location-status-bar-chart.component';
+import { PropertyStatusPieChartComponent } from 'src/app/charts/property-status-pie-chart/property-status-pie-chart.component';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +26,9 @@ import { PropertyTypePieChartComponent } from 'src/app/charts/property-type-pie-
     AssistantComponent,
     FooterComponent,
     NgxChartsModule,
-    PropertyTypePieChartComponent
+    PropertyTypePieChartComponent,
+    PropertyLocationStatusBarChartComponent,
+    PropertyStatusPieChartComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
