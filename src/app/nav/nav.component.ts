@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { environment } from '../../environments/environment';
 import { UserInfo } from '../models/user-info';
 
 @Component({
@@ -9,9 +9,13 @@ import { UserInfo } from '../models/user-info';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
+  providers: [
+    { provide: ActivatedRoute, useValue: {  } }
+  ]
 })
 export class NavComponent {
+  title = 'Welcome to Rental Master'
   showMenu = false;
   env = environment.production;
   user: UserInfo | null;

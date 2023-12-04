@@ -12,7 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import {
   MatBottomSheet,
@@ -20,6 +20,7 @@ import {
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import { FooterComponent } from '../footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -40,10 +41,14 @@ import { FooterComponent } from '../footer/footer.component';
     MatMenuModule, 
     MatIconModule,
     MatBottomSheetModule,
-    FooterComponent
+    FooterComponent,
+    HttpClientModule
   ],
   templateUrl: './rental-app.component.html',
-  styleUrls: ['./rental-app.component.css']
+  styleUrls: ['./rental-app.component.css'],
+  // providers: [
+  //   {provide: HttpClient, useValue: {}}
+  // ]
 })
 export class RentalAppComponent {
   

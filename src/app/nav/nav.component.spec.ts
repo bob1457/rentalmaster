@@ -6,16 +6,24 @@ describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [NavComponent]
     });
-    fixture = TestBed.createComponent(NavComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    // fixture = TestBed.createComponent(NavComponent);
+    // component = fixture.componentInstance;
+    // fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(NavComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it('should have as title \'Rental Master\'', () => {
+    const fixture = TestBed.createComponent(NavComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('Welcome to Rental Master');
   });
 });

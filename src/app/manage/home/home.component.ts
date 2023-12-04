@@ -4,13 +4,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { AssistantComponent } from 'src/app/assistant/assistant.component';
+import { AssistantComponent } from '../../assistant/assistant.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { FooterComponent } from 'src/app/footer/footer.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { PropertyTypePieChartComponent } from 'src/app/charts/property-type-pie-chart/property-type-pie-chart.component';
-import { PropertyLocationStatusBarChartComponent } from 'src/app/charts/property-location-status-bar-chart/property-location-status-bar-chart.component';
-import { PropertyStatusPieChartComponent } from 'src/app/charts/property-status-pie-chart/property-status-pie-chart.component';
+import { FooterComponent } from '../../footer/footer.component';
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PropertyTypePieChartComponent } from '../../charts/property-type-pie-chart/property-type-pie-chart.component';
+import { PropertyLocationStatusBarChartComponent } from '../../charts/property-location-status-bar-chart/property-location-status-bar-chart.component';
+import { PropertyStatusPieChartComponent } from '../../charts/property-status-pie-chart/property-status-pie-chart.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +25,7 @@ import { PropertyStatusPieChartComponent } from 'src/app/charts/property-status-
     RouterModule,
     AssistantComponent,
     FooterComponent,
-    NgxChartsModule,
+    // NgxChartsModule,
     PropertyTypePieChartComponent,
     PropertyLocationStatusBarChartComponent,
     PropertyStatusPieChartComponent

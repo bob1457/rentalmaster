@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest",
+    "test-cov": "jest --coverage",
+    "text-watch": "jest --watch"
   },
   "private": true,
   "dependencies": {
@@ -34,20 +36,35 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^17.0.0",
     "@angular-devkit/build-angular": "^17.0.1",
     "@angular/cli": "~17.0.1",
     "@angular/compiler-cli": "^17.0.3",
-    "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.5.10",
     "autoprefixer": "^10.4.15",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
+    "jest": "^29.7.0",
     "postcss": "^8.4.29",
     "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.3",
     "typescript": "~5.2.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": ["<rootDir>/src/setup-jest.ts"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/(?!@NgChartsModule)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": [
+          "jest-preset-angular/build/InlineFilesTransformer",
+          "jest-preset-angular/build/StripStylesTransformer"
+        ]
+      }
+    }
   }
 }
