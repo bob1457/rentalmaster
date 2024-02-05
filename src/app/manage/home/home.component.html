@@ -79,8 +79,8 @@
             </a>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-0 px-[12px]">
-            <div class="bg-slate-400/10 xl:h-72 xl:mx-auto lg:h-72 md:h-64 h-48 shadow-lg">
+        <div class="chart">
+            <div class="pie-chart">
                 <!-- <ngx-charts-pie-chart 
                     [results]="rentalStatusData"
                     [legend]="true"
@@ -90,10 +90,10 @@
                 </ngx-charts-pie-chart> -->
                 <app-property-type-pie-chart></app-property-type-pie-chart>
             </div>
-            <div class="bg-slate-400/10lg:h-72 md:h-64 h-60">
+            <div class="pie-chart">
                 <app-property-status-pie-chart></app-property-status-pie-chart>
             </div>
-            <div class="bg-purple-400 lg:h-72 md:h-64 h-60 col-span-2 overflow-x-auto">
+            <div class="bar-chart">
                 <app-property-location-status-bar-chart></app-property-location-status-bar-chart>
             </div>
         </div>
