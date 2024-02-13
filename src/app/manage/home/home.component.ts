@@ -34,6 +34,7 @@ import { TenantComponent } from "../tenant/tenant.component";
         // PropertyTypePieChartComponent,
         // PropertyLocationStatusBarChartComponent,
         // PropertyStatusPieChartComponent,
+        RouterModule,
         DashboardComponent,
         PropertyComponent,
         TenantComponent
