@@ -12,6 +12,8 @@ import { PropertyTypePieChartComponent } from '../../charts/property-type-pie-ch
 import { PropertyLocationStatusBarChartComponent } from '../../charts/property-location-status-bar-chart/property-location-status-bar-chart.component';
 import { PropertyStatusPieChartComponent } from '../../charts/property-status-pie-chart/property-status-pie-chart.component';
 import { DashboardComponent } from "../dashboard/dashboard.component";
+import { PropertyComponent } from "../property/property.component";
+import { TenantComponent } from "../tenant/tenant.component";
 
 @Component({
     selector: 'app-home',
@@ -32,7 +34,9 @@ import { DashboardComponent } from "../dashboard/dashboard.component";
         // PropertyTypePieChartComponent,
         // PropertyLocationStatusBarChartComponent,
         // PropertyStatusPieChartComponent,
-        DashboardComponent
+        DashboardComponent,
+        PropertyComponent,
+        TenantComponent
     ]
 })
 export class HomeComponent {
@@ -44,21 +48,21 @@ export class HomeComponent {
   tenantPage = false;
 
   openDashboardPage() {
-    console.log('clicked to open dashboard page');
+    // console.log('clicked to open dashboard page');
     this.dashboardPage = true;
     this.propertyPage = false;
     this.tenantPage = false;
   }
 
   openPropertyPage() {
-    console.log('clicked to open property page');
+    // console.log('clicked to open property page');
     this.dashboardPage = false;
     this.propertyPage = true;
     this.tenantPage = false;
   }
 
   openTenantPage() {
-    console.log('clicked to open tenant page');
+    // console.log('clicked to open tenant page');
     this.dashboardPage = false;
     this.propertyPage = false;
     this.tenantPage = true;
