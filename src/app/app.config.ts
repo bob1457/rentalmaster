@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAnimations(),
-    importProvidersFrom(BrowserAnimationsModule),
+    importProvidersFrom(BrowserAnimationsModule),    
     importProvidersFrom(NgxChartsModule),
     importProvidersFrom(NgChartsModule)
     // importProvidersFrom(MatButtonModule),

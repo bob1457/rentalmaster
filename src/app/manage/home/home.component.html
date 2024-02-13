@@ -1,109 +1,58 @@
-<!-- <p>home works!</p> -->
+<section class="container w-full lg:w-[90%] mx-auto mb-4">
+    <img src="../../../assets/images/manage.png" alt="admin" height="60px" width="60px" class="">
+</section>
 
-<div class="h-auto">
-    <section class="container w-full lg:w-[90%] mx-auto mb-20">
-        <div class="flex space-x-2 mx-auto">
-            <!-- <mat-icon class="text-orange-700">line_weight</mat-icon> -->
-            <div class="flex mx-auto items-start">
-                <mat-icon class="text-green-700 text-3xl">settings</mat-icon>
-                <label for="countries" class="block text-lg sm:text-xl font-semi-bold text-gray-900 dark:text-white font-medium uppercase mb-4">manage rental properties</label>
-            </div>
-            
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-            <a routerLink="/about" class=" cursor-pointer">
-                <div class="flex flex-col manage-tile bg-red-500/50 relative">
-                    <!-- <div class=" p-[4px] md:p-2 border-2 border-black w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-full"><mat-icon class="p-2 mr-4 rounded-  -mt-[-12px] -ml-[11px]">home</mat-icon></div> -->
-                    <!-- <div> -->
-                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                            <img src="../../../assets/images/home.png"  alt="">
-                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                        </div>
-                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
-                            <div class=" text-xl font-semibold">25</div>
-                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold">Rental <span class="hidden md:inline">property</span> listings</div>
-                        </div>
-                    <!-- </div> -->
-                    
-                    <div class="absolute left-[90px] lg:left-[120px] md:left-[100px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Listings</div>
-                </div>
-            </a>
-            <a>
-                <div class="flex flex-col manage-tile bg-green-500/50 relative">
-                    <!-- <div> -->
-                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                            <img src="../../../assets/images/file.png" alt="">
-                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                        </div>
-                        <div class="flex mt-2 w-36 lg:w-52 -ml-2">
-                            <div class=" text-xl font-semibold">14</div>
-                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Current </span>Rental Agreements</div>
-                        </div>
-                    <!-- </div> -->
-                    
-                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> <span class="text-[13px] md:text-[1rem]">Contracts</span></div>
-                </div>
-            </a>
-            <a>
-                <div class="flex flex-col manage-tile bg-purple-700/70 relative">
-                    <!-- <div> -->
-                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                            <img src="../../../assets/images/content-design.png" alt="">
-                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                        </div>
-                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
-                            <div class=" text-xl font-semibold">8</div>
-                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Active </span>Rental Applications</div>
-                        </div>
-                    <!-- </div> -->
-                    
-                    <div class="absolute left-[90px] lg:left-[110px]  md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br><span class="text-[14px] lg:text-lg md:text-sm">Applicants</span></div>
-                </div>
-            </a>
-            <a>
-                <div class="flex flex-col manage-tile bg-blue-500/60 relative cursor-pointer">
-                    <!-- <div> -->
-                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
-                            <img src="../../../assets/images/group.png" alt="">
-                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
-                        </div>
-                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
-                            <div class=" text-xl font-semibold">25</div>
-                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Current </span>Rental Tenants</div>
-                        </div>
-                    <!-- </div> -->
-                    
-                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Tenants</div>
-                </div>
-            </a>
-        </div>
+<section class="container w-full lg:w-[90%] mx-auto mb-4">
+    
+    <div class="border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">            
+            <li class="me-2">                
+                <a (click)="openDashboardPage()" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{dashboardPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}} {{dashboardPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                    <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5 11.424V1a1 1 0 1 0-2 0v10.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.228 3.228 0 0 0 0-6.152ZM19.25 14.5A3.243 3.243 0 0 0 17 11.424V1a1 1 0 0 0-2 0v10.424a3.227 3.227 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.243 3.243 0 0 0 2.25-3.076Zm-6-9A3.243 3.243 0 0 0 11 2.424V1a1 1 0 0 0-2 0v1.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0V8.576A3.243 3.243 0 0 0 13.25 5.5Z"/>
+                    </svg>Dashboard
+                </a>
+            </li>
+            <li class="me-2">
+                <a (click)="openPropertyPage()" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{propertyPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}}  {{propertyPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                    <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5 11.424V1a1 1 0 1 0-2 0v10.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.228 3.228 0 0 0 0-6.152ZM19.25 14.5A3.243 3.243 0 0 0 17 11.424V1a1 1 0 0 0-2 0v10.424a3.227 3.227 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.243 3.243 0 0 0 2.25-3.076Zm-6-9A3.243 3.243 0 0 0 11 2.424V1a1 1 0 0 0-2 0v1.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0V8.576A3.243 3.243 0 0 0 13.25 5.5Z"/>
+                    </svg>Settings
+                </a>
+            </li>
+            <li class="me-2">
+                <a (click)="openTenantPage()" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{tenantPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}}  {{tenantPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                    <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                        <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+                    </svg>Contacts
+                </a>
+            </li>
+            <li>
+                <a class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</section>
 
-        <div class="chart">
-            <div class="pie-chart">
-                <!-- <ngx-charts-pie-chart 
-                    [results]="rentalStatusData"
-                    [legend]="true"
-                    [legendTitle]="'Rental Properties'" 
-                    [view]="[1000,300]"
-                    [labels]="true" >
-                </ngx-charts-pie-chart> -->
-                <app-property-type-pie-chart></app-property-type-pie-chart>
-            </div>
-            <div class="pie-chart">
-                <app-property-status-pie-chart></app-property-status-pie-chart>
-            </div>
-            <div class="bar-chart">
-                <app-property-location-status-bar-chart></app-property-location-status-bar-chart>
-            </div>
-        </div>
-        
-        
-    </section>
-    <!-- <app-assistant></app-assistant> -->
-
-    <!-- <app-footer></app-footer> -->
+<div *ngIf="dashboardPage == true">
+    <app-dashboard></app-dashboard>
 </div>
+<div *ngIf="propertyPage == true">
+    <div class="h-auto">
+        <section class="container w-full lg:w-[90%] mx-auto mb-20">
+            Property
+        </section>
+    </div>
+    
+    <!-- <app-dashboard></app-dashboard> -->
+</div>
+<div *ngIf="tenantPage == true">
+    <p>Tenant</p>
+</div>
+
+
+
+
 
 
 

@@ -1,6 +1,12 @@
 <!-- <h2 class="text-blue-600 text-lg font-bold">Resources</h2> -->
-<app-nav></app-nav>
+<div class="flex flex-col">
+    <div>
+        <app-nav></app-nav>
+        <router-outlet />
+    </div>
 
-<router-outlet />
-<app-footer></app-footer>
+    <div class="flex-1">
+        <app-footer></app-footer>
+    </div>
 
+</div>

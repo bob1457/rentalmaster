@@ -1,0 +1,22 @@
+mat-icon {
+    /* font-size: 30px; */
+    height: 40px ;
+    width: 40px;
+  }
+
+.manage-tile {
+    @apply flex w-full h-28 md:h-36 rounded-md p-8 shadow-xl hover:shadow-2xl;
+}
+
+.chart {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 p-0 px-[12px]
+}
+
+.pie-chart {
+    @apply bg-slate-400/10 xl:h-80 xl:mx-auto lg:h-72 md:h-64 h-48 shadow-lg
+}
+
+.bar-chart {
+    @apply bg-slate-400/10 lg:h-80 md:h-64 h-60 col-span-2 overflow-x-auto
+}
+

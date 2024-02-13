@@ -1,0 +1,97 @@
+<!-- <p>dashboard works!</p> -->
+<div class="h-auto">
+    <section class="container w-full lg:w-[90%] mx-auto mb-20">        
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+            <a routerLink="/about" class=" cursor-pointer">
+                <div class="flex flex-col manage-tile bg-red-500/50 relative">
+                    <!-- <div class=" p-[4px] md:p-2 border-2 border-black w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-full"><mat-icon class="p-2 mr-4 rounded-  -mt-[-12px] -ml-[11px]">home</mat-icon></div> -->
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/home.png"  alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
+                            <div class=" text-xl font-semibold">25</div>
+                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold">Rental <span class="hidden md:inline">property</span> listings</div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[100px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Listings</div>
+                </div>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-green-500/50 relative">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/file.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="flex mt-2 w-36 lg:w-52 -ml-2">
+                            <div class=" text-xl font-semibold">14</div>
+                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Current </span>Rental Agreements</div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> <span class="text-[13px] md:text-[1rem]">Contracts</span></div>
+                </div>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-purple-700/70 relative">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/content-design.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
+                            <div class=" text-xl font-semibold">8</div>
+                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Active </span>Rental Applications</div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[110px]  md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br><span class="text-[14px] lg:text-lg md:text-sm">Applicants</span></div>
+                </div>
+            </a>
+            <a>
+                <div class="flex flex-col manage-tile bg-blue-500/60 relative cursor-pointer">
+                    <!-- <div> -->
+                        <div class=" h-10 w-10 md:h-16 md:w-16 border-4 border-black/40 p-2 rounded-full -ml-[10px]">
+                            <img src="../../../assets/images/group.png" alt="">
+                        <!-- <mat-icon fontIcon="home" class="text-xl h-[50px] w-[50px]"></mat-icon> -->
+                        </div>
+                        <div class="flex mt-2 w-36 lg:w-48 -ml-2">
+                            <div class=" text-xl font-semibold">25</div>
+                            <div class="text-xs md:text-md mt-[4px] ml-2 md:ml-4 lg:ml-6 italic font-bold"><span class="hidden md:inline">Current </span>Rental Tenants</div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="absolute left-[90px] lg:left-[120px] md:left-[95px] font-semibold text-md md:font-bold md:text-lg">Rental<br> Tenants</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart">
+            <div class="pie-chart">
+                <!-- <ngx-charts-pie-chart 
+                    [results]="rentalStatusData"
+                    [legend]="true"
+                    [legendTitle]="'Rental Properties'" 
+                    [view]="[1000,300]"
+                    [labels]="true" >
+                </ngx-charts-pie-chart> -->
+                <app-property-type-pie-chart></app-property-type-pie-chart>
+            </div>
+            <div class="pie-chart">
+                <app-property-status-pie-chart></app-property-status-pie-chart>
+            </div>
+            <div class="bar-chart">
+                <app-property-location-status-bar-chart></app-property-location-status-bar-chart>
+            </div>
+        </div>
+        
+        
+    </section>
+    <!-- <app-assistant></app-assistant> -->
+
+    <!-- <app-footer></app-footer> -->
+</div>
