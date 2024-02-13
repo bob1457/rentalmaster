@@ -7,16 +7,16 @@
     <div class="border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">            
             <li class="me-2">                
-                <a [routerLink]="['/manage']" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{dashboardPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}} {{dashboardPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                <a [routerLink]="['/manage']" routerLinkActive='active' [routerLinkActiveOptions]={exact:true} class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
                     <!-- <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M5 11.424V1a1 1 0 1 0-2 0v10.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.228 3.228 0 0 0 0-6.152ZM19.25 14.5A3.243 3.243 0 0 0 17 11.424V1a1 1 0 0 0-2 0v10.424a3.227 3.227 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.243 3.243 0 0 0 2.25-3.076Zm-6-9A3.243 3.243 0 0 0 11 2.424V1a1 1 0 0 0-2 0v1.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0V8.576A3.243 3.243 0 0 0 13.25 5.5Z"/>
                     </svg> -->
-                    <img src="../../../assets/images/dashboard.svg" alt="dashboard" height="20px" width="20px" class="me-2">
+                    <img src="../../../assets/images/dashboard.svg" alt="dashboard" height="20px" width="20px" class="me-2 text-red-700">
                     Dashboard
                 </a>
             </li>
             <li class="me-2">
-                <a [routerLink]="['/manage/property']" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{propertyPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}}  {{propertyPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                <a [routerLink]="['/manage/property']" routerLinkActive='active' class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
                     <!-- <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M5 11.424V1a1 1 0 1 0-2 0v10.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.228 3.228 0 0 0 0-6.152ZM19.25 14.5A3.243 3.243 0 0 0 17 11.424V1a1 1 0 0 0-2 0v10.424a3.227 3.227 0 0 0 0 6.152V19a1 1 0 1 0 2 0v-1.424a3.243 3.243 0 0 0 2.25-3.076Zm-6-9A3.243 3.243 0 0 0 11 2.424V1a1 1 0 0 0-2 0v1.424a3.228 3.228 0 0 0 0 6.152V19a1 1 0 1 0 2 0V8.576A3.243 3.243 0 0 0 13.25 5.5Z"/>
                     </svg> -->
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="me-2">
-                <a [routerLink]="['/manage/tenant']" class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 {{tenantPage ? 'bg-gray-200 font-semibold' : 'bg-transparent'}}  {{tenantPage ? 'border-blue-500' : 'border-transparent'}} rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                <a [routerLink]="['/manage/tenant']" routerLinkActive='active' class="inline-flex items-center justify-center cursor-pointer p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
                     <!-- <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                         <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
                     </svg>Contacts -->
@@ -39,22 +39,3 @@
         </ul>
     </div>
 </section>
-
-<!-- <div *ngIf="dashboardPage == true">
-    <app-dashboard></app-dashboard>    
-</div>
-<div *ngIf="propertyPage == true">
-    <app-property></app-property>
-</div>
-<div *ngIf="tenantPage == true">
-    <app-tenant></app-tenant>
-</div> -->
-
-
-<router-outlet />
-
-
-
-
-
-<!-- Disable material tab animation:  [@.disabled]="true" in top container-->
