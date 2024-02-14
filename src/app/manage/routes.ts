@@ -8,8 +8,15 @@ export const ManageRoutes: Route[] = [
     // { path: 'dashboard', component: DashboardComponent },
     // { path: 'properties', component: PropertiesComponent },
     // { path: 'tenants', component: TenantsComponent },
-    { path: '', component: DashboardComponent },
-    { path: 'property', component: PropertyComponent},
-    { path: 'tenant', component: TenantComponent},
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
-    ];
+    { path: '', component: HomeComponent,
+    children: [
+        { path: '', component: DashboardComponent},
+        { path: 'property', component: PropertyComponent},
+        { path: 'tenant', component: TenantComponent},
+        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    // { path: 'dashboard', component: DashboardComponent},
+    // { path: 'property', component: PropertyComponent},
+    // { path: 'tenant', component: TenantComponent},
+    // { path: '', redirectTo: '', pathMatch: 'full' }
+    ]}
+];

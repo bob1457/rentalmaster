@@ -14,6 +14,7 @@ import { PropertyStatusPieChartComponent } from '../../charts/property-status-pi
 import { DashboardComponent } from "../dashboard/dashboard.component";
 import { PropertyComponent } from "../property/property.component";
 import { TenantComponent } from "../tenant/tenant.component";
+import { ManageNavComponent } from '../nav/nav.component';
 
 @Component({
     selector: 'app-home',
@@ -34,6 +35,7 @@ import { TenantComponent } from "../tenant/tenant.component";
         // PropertyTypePieChartComponent,
         // PropertyLocationStatusBarChartComponent,
         // PropertyStatusPieChartComponent,
+        ManageNavComponent,
         RouterModule,
         DashboardComponent,
         PropertyComponent,

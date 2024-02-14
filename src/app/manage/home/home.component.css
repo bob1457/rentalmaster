@@ -20,4 +20,10 @@ mat-icon {
     @apply bg-slate-400/10 lg:h-80 md:h-64 h-60 col-span-2 overflow-x-auto
 }
 
+.active {
+    /* @apply pb-2 border-b-2 border-red-500; */
+    padding-bottom: 6px;
+    border-bottom: 3px solid blue;
+    background-color: #f0eeee;
+}
 

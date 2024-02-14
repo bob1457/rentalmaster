@@ -25,5 +25,13 @@ import { ManageNavComponent } from "./manage/nav/nav.component";
     ]
 })
 export class AppComponent {
-  title = 'Rental Master';
+    constructor() { }
+
+    
+    
+    onInit() {
+       
+    }
+  
+    title = 'Rental Master';
 }
